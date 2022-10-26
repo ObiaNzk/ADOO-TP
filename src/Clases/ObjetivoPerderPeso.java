@@ -1,4 +1,4 @@
-import java.util.ArrayList;
+package Clases;
 
 public class ObjetivoPerderPeso extends Objetivo{
 

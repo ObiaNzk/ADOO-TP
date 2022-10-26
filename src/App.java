@@ -1,18 +1,24 @@
-import java.util.List;
+import Clases.Socio;
+import Controllers.ControllerSocio;
+import Enums.Exigencia;
+import Enums.Sexo;
+import Enums.TipoMuscular;
+import ListaEjercicios.ListaEjercicios;
+import ListaEjercicios.Ejercicio;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        Socio socio = new Socio("Facundo", "Gironte", 21, Sexo.HOMBRE);
-        System.out.println(socio.toString());
 
-        Socio socio2 = new Socio("Juan", "López", 21, Sexo.HOMBRE);
-        System.out.println(socio2.toString());
+        ControllerSocio cs = ControllerSocio.getInstancia();
 
-        instanciarEjerciciosLista();
+        cs.crearSocio("Facundo", "Gironte", 21, Sexo.HOMBRE);
+        cs.crearSocio("Juan", "López", 21, Sexo.HOMBRE);
 
-        for(Ejercicio ej: ListaEjercicios.getEjercicios()){
-            System.out.println(ej.getNombre());
-        }
+        cs.printSocios();
+
+        //instanciarEjerciciosLista();
+
+
     }
 
     public static void instanciarEjerciciosLista(){

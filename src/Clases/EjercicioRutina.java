@@ -1,3 +1,7 @@
+package Clases;
+
+import ListaEjercicios.Ejercicio;
+
 public class EjercicioRutina {
     private String _nombre;
     private int _series;

@@ -1,3 +1,8 @@
+package Clases;
+
+import Enums.Sexo;
+import Trofeos.Trofeo;
+
 import java.util.ArrayList;
 
 public class Socio {

@@ -1,3 +1,8 @@
+package ListaEjercicios;
+
+import Enums.Exigencia;
+import Enums.TipoMuscular;
+
 import java.util.ArrayList;
 
 public class ListaEjercicios {

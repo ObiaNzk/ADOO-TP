@@ -1,3 +1,7 @@
+package ListaEjercicios;
+
+import Enums.Exigencia;
+import Enums.TipoMuscular;
 
 public class Ejercicio {
     private TipoMuscular _tipoMuscular;

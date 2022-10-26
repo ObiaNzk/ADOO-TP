@@ -1,3 +1,7 @@
+package Clases;
+
+import ListaEjercicios.Ejercicio;
+
 import java.util.ArrayList;
 
 public class DiaRutina {
