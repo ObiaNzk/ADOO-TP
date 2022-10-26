@@ -6,17 +6,22 @@ import Enums.TipoMuscular;
 import ListaEjercicios.ListaEjercicios;
 import ListaEjercicios.Ejercicio;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
+
 public class App {
     public static void main(String[] args) throws Exception {
 
         ControllerSocio cs = ControllerSocio.getInstancia();
 
-        cs.crearSocio("Facundo", "Gironte", 21, Sexo.HOMBRE);
-        cs.crearSocio("Juan", "López", 21, Sexo.HOMBRE);
+        cs.crearSocio("Facundo", "Gironte", "29/07/2001" , Sexo.HOMBRE);
+        cs.crearSocio("Juan", "López", "15/06/1989", Sexo.HOMBRE);
 
         cs.printSocios();
 
         //instanciarEjerciciosLista();
+
 
 
     }

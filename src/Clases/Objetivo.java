@@ -1,17 +1,16 @@
 package Clases;
 
-public abstract class Objetivo {
+public class Objetivo {
+    private ObjetivoStrategy _estrategia;
+    private Rutina _rutina;
 
-
-    public Objetivo(){
+    public void cambiarObjetivo(Objetivo objetivo){
 
     }
 
-    public Rutina crearRutina(){
-
-        return null;
+    public void crearRutina(){
+        this._rutina = _estrategia.crearRutina();
     }
-
 
 
 }

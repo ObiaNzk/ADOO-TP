@@ -2,11 +2,12 @@ package Clases;
 
 import ListaEjercicios.Ejercicio;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.ArrayList;
 
 public class Rutina {
-    private Date _fechaInicio = new Date();
+    private LocalDate _fechaInicio = LocalDate.now();
     private static double porcentajeRefuerzo =0.1;
     private ArrayList<DiaRutina> _dias;
 
@@ -29,6 +30,8 @@ public class Rutina {
             }
         }
     }
+
+
 
 
 }
