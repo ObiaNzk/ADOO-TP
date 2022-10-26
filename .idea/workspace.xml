@@ -1,49 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e957b87e-793c-4a37-876f-f9528bece9dd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controllers/ControllerSocio.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/NotificacionTrofeo/Notificacion.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/NotificacionTrofeo/Notificador.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Trofeos/Trofeo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Trofeos/TrofeoConstancia.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Trofeos/TrofeoCreido.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Trofeos/TrofeoDedicacion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/App_Ejercicio/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/App_Ejercicio/App.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/App_Ejercicio/DiaRutina.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/App_Ejercicio/Ejercicio.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/App_Ejercicio/EjercicioRutina.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/App_Ejercicio/Exigencia.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/App_Ejercicio/ListaEjercicios.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/App_Ejercicio/Objetivo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/App_Ejercicio/ObjetivoMantener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/App_Ejercicio/ObjetivoPerderPeso.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/App_Ejercicio/ObjetivoTonificar.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/App_Ejercicio/Rutina.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/App_Ejercicio/Sexo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/App_Ejercicio/Socio.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/App_Ejercicio/TipoMuscular.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/App_Ejercicio/TipoTrofeo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/App_Ejercicio/Trofeo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DiaRutina.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Clases/DiaRutina.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ejercicio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ListaEjercicios/Ejercicio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EjercicioRutina.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Clases/EjercicioRutina.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Exigencia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Enums/Exigencia.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ListaEjercicios.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ListaEjercicios/ListaEjercicios.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Objetivo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Clases/Objetivo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ObjetivoMantener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Clases/ObjetivoMantener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ObjetivoPerderPeso.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Clases/ObjetivoPerderPeso.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ObjetivoTonificar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Clases/ObjetivoTonificar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Rutina.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Clases/Rutina.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Sexo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Enums/Sexo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Socio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Clases/Socio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TipoMuscular.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Enums/TipoMuscular.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TipoTrofeo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Trofeo.java" beforeDir="false" />
-    </list>
+    <list default="true" id="e957b87e-793c-4a37-876f-f9528bece9dd" name="Changes" comment="Facu 26/10/2022 9.50am" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -107,6 +65,14 @@
       <option name="presentableId" value="Default" />
       <updated>1666362390645</updated>
     </task>
+    <task id="LOCAL-00001" summary="Facu 26/10/2022 9.50am">
+      <created>1666788641666</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1666788641666</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -119,5 +85,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Facu 26/10/2022 9.50am" />
+    <option name="LAST_COMMIT_MESSAGE" value="Facu 26/10/2022 9.50am" />
   </component>
 </project>
