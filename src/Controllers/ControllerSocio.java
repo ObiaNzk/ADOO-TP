@@ -96,6 +96,7 @@ public class ControllerSocio {
             _socioLogueado = s;
         }
 
+        menu();
     }
 
     private void registrar() {
@@ -109,32 +110,31 @@ public class ControllerSocio {
 
     public void menu() {
         if(_socioLogueado.getObjetivo() == null){
-            elegirObjetivo();
+            _socioLogueado.elegirDiasEntrenamiento();
+            _socioLogueado.elegirObjetivo();
         }
+
         System.out.println("¿Cómo le gustaría empezar? Ingrese el número de la opción que corresponda.\n" +
                 "1. Comenzar entrenamiento del día\n" +
                 "2. Modificar objetivo\n" +
                 "3. Modificar días de entrenamiento\n" +
                 "4. Ver progreso\n" +
                 "5. Ver trofeos");
-    }
 
-    private void elegirObjetivo() {
-        System.out.println("Elija un objetivo. Ingrese el número de la opción que corresponda.\n" +
-                "\n" +
-                "1. Bajar de peso\n" +
-                "\n" +
-                "2. Tonificar cuerpo\n" +
-                "\n" +
-                "3. Mantener la figura");
-        String elegido = scanner.nextLine();
-        while(!elegido.equals("1") && !elegido.equals("2") && !elegido.equals("3")){
-            System.out.println("Ingrese un número de objetivo válido.");
-            elegido = scanner.nextLine();
+        switch (scanner.nextLine()){
+            case "1":
+                _socioLogueado.entrenar();
+            case "2":
+                _socioLogueado.elegirObjetivo();
+            case "3":
+                _socioLogueado.elegirDiasEntrenamiento();
+            case "4":
+                _socioLogueado.getProgeso();
+            case "5":
+                _socioLogueado.getTrofeos();
+            default:
+                System.out.println("La opción ingresada es incorrecta");
+                menu();
         }
-
-        _socioLogueado.cambiarObjetivo(elegido);
-
-
     }
 }

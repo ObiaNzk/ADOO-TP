@@ -6,6 +6,7 @@ import Trofeos.Trofeo;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Socio {
     private int _dni;
@@ -17,10 +18,12 @@ public class Socio {
 
     private Double _altura;
 
+    private String[]_diasEntrenamiento;
+
     private Objetivo _objetivo;
-    private ArrayList<Integer> _diasEntrenamiento = new ArrayList<Integer>();
 
     private ArrayList<Trofeo> _trofeos = new ArrayList<Trofeo>();
+
 
     public Socio(String nombre, String apellido, int dni, LocalDate fechaNacimiento, Sexo sexo ){
         this._dni = dni;
@@ -77,5 +80,47 @@ public class Socio {
     public Objetivo getObjetivo() {
         return _objetivo;
 
+    }
+
+    public void setDiasEntrenamiento(String[] dias) {
+        this._diasEntrenamiento = dias;
+    }
+
+    public void elegirObjetivo() {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Elija un objetivo. Ingrese el número de la opción que corresponda.\n" +
+                "\n" +
+                "1. Bajar de peso\n" +
+                "\n" +
+                "2. Tonificar cuerpo\n" +
+                "\n" +
+                "3. Mantener la figura");
+        String elegido = scanner.nextLine();
+        while(!elegido.equals("1") && !elegido.equals("2") && !elegido.equals("3")){
+            System.out.println("Ingrese un número de objetivo válido.");
+            elegido = scanner.nextLine();
+        }
+
+        this.cambiarObjetivo(elegido);
+
+    }
+
+    public void elegirDiasEntrenamiento(){
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Elija qué días desea seleccionar como días de entrenamiento, separados por coma.\n LU, MA, MI, JU, VI, SA, DO. ");
+        String dias = scanner.nextLine();
+
+        this.setDiasEntrenamiento(dias.split(","));
+    }
+
+    public void entrenar() {
+    }
+
+    public void getProgeso() {
+    }
+
+    public void getTrofeos() {
     }
 }

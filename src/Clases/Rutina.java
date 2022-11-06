@@ -3,35 +3,14 @@ package Clases;
 import ListaEjercicios.Ejercicio;
 
 import java.time.LocalDate;
-import java.util.Date;
 import java.util.ArrayList;
 
 public class Rutina {
     private LocalDate _fechaInicio = LocalDate.now();
     private static double porcentajeRefuerzo =0.1;
-    private ArrayList<DiaRutina> _dias;
+    private ArrayList<DiaEjercicio> _dias;
 
-    public Rutina(){
-        
+    public Rutina(ArrayList<DiaEjercicio> diaEjercicios){
+        this._dias = diaEjercicios;
     }
-
-    public void agregarDias(ArrayList<Integer> dias){
-        _dias = new ArrayList<DiaRutina>();
-        for(int dia: dias){
-            _dias.add(new DiaRutina(dia));
-        }
-    }
-
-    public void agregarEjercicio(Ejercicio ejercicio, int dia, int series, int repeticiones, double peso){
-
-        for(DiaRutina _dia: _dias){
-            if(_dia.getDia() == dia ){
-                _dia.agregarEjercicio(ejercicio, series, repeticiones, peso);
-            }
-        }
-    }
-
-
-
-
 }

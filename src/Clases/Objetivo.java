@@ -8,8 +8,8 @@ public class Objetivo {
         this._estrategia = estrategia;
     }
 
-    public void crearRutina(){
-        this._rutina = _estrategia.crearRutina();
+    public void crearRutina(String[] dias){
+        this._rutina = this._estrategia.crearRutina(dias);
     }
 
 

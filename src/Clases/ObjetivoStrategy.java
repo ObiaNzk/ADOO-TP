@@ -1,16 +1,6 @@
 package Clases;
 
 public abstract class ObjetivoStrategy {
-
-    public ObjetivoStrategy(){
-
-    }
-
-    public Rutina crearRutina(){
-
-        return null;
-    }
-
-
+    abstract public Rutina crearRutina(String[] dias);
 
 }
