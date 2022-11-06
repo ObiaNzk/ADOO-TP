@@ -13,16 +13,21 @@ import java.util.Date;
 public class App {
     public static void main(String[] args) throws Exception {
 
-        ControllerSocio cs = ControllerSocio.getInstancia();
-
-        cs.crearSocio("Facundo", "Gironte", "29/07/2001" , Sexo.HOMBRE);
-        cs.crearSocio("Juan", "López", "15/06/1989", Sexo.HOMBRE);
-
-        cs.printSocios();
-
         //instanciarEjerciciosLista();
+        //otras instancias basicas
 
+        ControllerSocio cs = ControllerSocio.getInstancia();
+        cs.crearSocio("Facundo", "Gironte", 1, "29/07/2001" , Sexo.HOMBRE);
+        cs.crearSocio("Juan", "López",2, "15/06/1989", Sexo.HOMBRE);
 
+        cs.getSocioByDNI(1).set_psw("contraseña");
+        cs.getSocioByDNI(2).set_psw("contraseña");
+
+        cs.bienvenida();
+
+        System.out.println("Logueado: " + cs.getLogueado().toString());
+
+        cs.menu();
 
     }
 

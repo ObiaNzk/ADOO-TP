@@ -8,8 +8,8 @@ import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 
 public class Socio {
-    static int contadorSocios = 0;
-    private int _id;
+    private int _dni;
+    private String _psw;
     private String _nombre;
     private String _apellido;
     private LocalDate _fechaNacimiento;
@@ -22,9 +22,8 @@ public class Socio {
 
     private ArrayList<Trofeo> _trofeos = new ArrayList<Trofeo>();
 
-    public Socio(String nombre, String apellido, LocalDate fechaNacimiento, Sexo sexo ){
-        this._id = contadorSocios;
-        contadorSocios++;
+    public Socio(String nombre, String apellido, int dni, LocalDate fechaNacimiento, Sexo sexo ){
+        this._dni = dni;
         this._nombre = nombre;
         this._apellido = apellido;
         this._fechaNacimiento = fechaNacimiento;
@@ -32,7 +31,12 @@ public class Socio {
 
     }
 
-    public void cambiarObjetivo(Objetivo objetivo){
+    public void cambiarObjetivo(String objetivo){
+        switch(objetivo){
+            case "1": _objetivo.cambiarEstrategia(new ObjetivoPerderPeso());
+            case "2": _objetivo.cambiarEstrategia(new ObjetivoTonificar());
+            case "3": _objetivo.cambiarEstrategia(new ObjetivoMantener());
+        }
 
     }
 
@@ -52,13 +56,26 @@ public class Socio {
 
 
     public String toString(){
-        return "Socio " + _nombre + " " + _apellido + ". Número " + _id + ".";
+        return "Socio " + _nombre + " " + _apellido + ". DNI número " + _dni + ".";
 
     }
 
 
-    public int getId(){
-        return this._id;
+    public int getDNI(){
+        return this._dni;
     }
 
+
+    public void setPsw(String _psw) {
+        this._psw = _psw;
+    }
+
+    public String getPsw() {
+        return this._psw;
+    }
+
+    public Objetivo getObjetivo() {
+        return _objetivo;
+
+    }
 }

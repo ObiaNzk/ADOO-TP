@@ -4,8 +4,8 @@ public class Objetivo {
     private ObjetivoStrategy _estrategia;
     private Rutina _rutina;
 
-    public void cambiarObjetivo(Objetivo objetivo){
-
+    public void cambiarEstrategia(ObjetivoStrategy estrategia){
+        this._estrategia = estrategia;
     }
 
     public void crearRutina(){

@@ -1,6 +1,6 @@
 package Clases;
 
-public class ObjetivoMantener {
+public class ObjetivoMantener extends ObjetivoStrategy{
     public Rutina crearRutina(){
         return null;
         
