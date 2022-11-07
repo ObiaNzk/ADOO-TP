@@ -109,7 +109,7 @@ public class ControllerSocio {
     }
 
     public void menu() {
-        if(_socioLogueado.getObjetivo() == null){
+        if(_socioLogueado.getObjetivo().getRutina() == null){
             _socioLogueado.elegirDiasEntrenamiento();
             _socioLogueado.elegirObjetivo();
         }

@@ -13,4 +13,8 @@ public class Rutina {
     public Rutina(ArrayList<DiaEjercicio> diaEjercicios){
         this._dias = diaEjercicios;
     }
+
+
+
+
 }

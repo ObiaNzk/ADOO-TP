@@ -12,5 +12,7 @@ public class Objetivo {
         this._rutina = this._estrategia.crearRutina(dias);
     }
 
-
+    public Rutina getRutina(){
+        return this._rutina;
+    }
 }

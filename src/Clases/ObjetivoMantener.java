@@ -40,6 +40,7 @@ public class ObjetivoMantener extends ObjetivoStrategy {
 
                 ejerciciosElegidos.add(ejercicioRutina);
                 duracionActual += ejercicio.getDuracion();
+                System.out.println(ejercicio.getNombre());
             }
 
             diasEjercicio.add(new DiaEjercicio(dia, ejerciciosElegidos));

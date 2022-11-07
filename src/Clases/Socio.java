@@ -31,7 +31,7 @@ public class Socio {
         this._apellido = apellido;
         this._fechaNacimiento = fechaNacimiento;
         this._sexo = sexo;
-
+        this._objetivo = new Objetivo();
     }
 
     public void cambiarObjetivo(String objetivo){
@@ -39,6 +39,8 @@ public class Socio {
             case "1": _objetivo.cambiarEstrategia(new ObjetivoPerderPeso());
             case "2": _objetivo.cambiarEstrategia(new ObjetivoTonificar());
             case "3": _objetivo.cambiarEstrategia(new ObjetivoMantener());
+            default:
+                System.out.println("Opcion incorrecta, elija nuevamente");
         }
 
     }
