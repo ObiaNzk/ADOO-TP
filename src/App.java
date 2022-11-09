@@ -1,20 +1,13 @@
-import Clases.Socio;
 import Controllers.ControllerSocio;
 import Enums.Exigencia;
 import Enums.Sexo;
 import Enums.TipoMuscular;
 import ListaEjercicios.ListaEjercicios;
-import ListaEjercicios.Ejercicio;
-
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.util.Date;
 
 public class App {
     public static void main(String[] args) throws Exception {
 
-        //instanciarEjerciciosLista();
-        //otras instancias basicas
+        instanciarEjerciciosLista();
 
         ControllerSocio cs = ControllerSocio.getInstancia();
         cs.crearSocio("Facundo", "Gironte", 1, "29/07/2001" , Sexo.HOMBRE);

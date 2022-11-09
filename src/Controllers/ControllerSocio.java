@@ -119,19 +119,31 @@ public class ControllerSocio {
                 "2. Modificar objetivo\n" +
                 "3. Modificar días de entrenamiento\n" +
                 "4. Ver progreso\n" +
-                "5. Ver trofeos");
+                "5. Ver trofeos\n" +
+                "6. Pesar\n" +
+                "7. Salir");
 
-        switch (scanner.nextLine()){
+        switch (scanner.nextLine()) {
             case "1":
                 _socioLogueado.entrenar();
+                break;
             case "2":
                 _socioLogueado.elegirObjetivo();
+                break;
             case "3":
                 _socioLogueado.elegirDiasEntrenamiento();
+                break;
             case "4":
                 _socioLogueado.getProgeso();
+                break;
             case "5":
                 _socioLogueado.getTrofeos();
+                break;
+            case "6":
+                _socioLogueado.registrarMedicion();
+                break;
+            case "7":
+                return;
             default:
                 System.out.println("La opción ingresada es incorrecta");
                 menu();

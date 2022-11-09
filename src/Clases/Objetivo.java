@@ -15,4 +15,8 @@ public class Objetivo {
     public Rutina getRutina(){
         return this._rutina;
     }
+
+    public void mostrarRutina(int dia) {
+
+    }
 }

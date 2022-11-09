@@ -16,6 +16,18 @@ public class EjercicioRutina {
         this._series = series;
         this._repeticiones = repeticiones;
         this._pesoAsignado = pesoAsignado;
+    }
 
+    public String getNombre() {
+        return this._nombre;
+    }
+
+    public Ejercicio getEjercicio() {
+        return this._ejercicio;
+    }
+
+    public void mostrarDatos() {
+        System.out.println("Realizar " + this._series + " series de " + this._repeticiones +
+                " " + this._nombre + " levantando " + this._pesoAsignado + "KG");
     }
 }

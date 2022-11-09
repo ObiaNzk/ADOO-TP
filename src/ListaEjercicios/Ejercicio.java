@@ -36,4 +36,6 @@ public class Ejercicio {
     public int getDuracion (){
         return this._duracion;
     }
+
+    public TipoMuscular getTipoMuscular() { return this._tipoMuscular; }
 }

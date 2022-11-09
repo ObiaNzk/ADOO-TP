@@ -22,4 +22,8 @@ public class DiaEjercicio {
     public String getDia() {
         return _dia;
     }
+
+    public ArrayList<EjercicioRutina> getEjerciciosRutina() {
+        return this._ejercicios;
+    }
 }

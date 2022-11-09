@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e957b87e-793c-4a37-876f-f9528bece9dd" name="Changes" comment="">
+    <list default="true" id="e957b87e-793c-4a37-876f-f9528bece9dd" name="Changes" comment="Facu 26/10/2022 9.50am">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/App_Ejercicio/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/App_Ejercicio/App.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/App_Ejercicio/Clases/DiaRutina.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/App_Ejercicio/Clases/DiaEjercicio.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/App_Ejercicio/Clases/DiaEjercicio.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/App_Ejercicio/Clases/EjercicioRutina.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/App_Ejercicio/Clases/EjercicioRutina.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/App_Ejercicio/Clases/Medicion.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/App_Ejercicio/Clases/Medicion.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/App_Ejercicio/Clases/Objetivo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/App_Ejercicio/Clases/Objetivo.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/App_Ejercicio/Clases/ObjetivoMantener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/App_Ejercicio/Clases/ObjetivoMantener.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/App_Ejercicio/Clases/ObjetivoPerderPeso.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/App_Ejercicio/Clases/ObjetivoPerderPeso.class" afterDir="false" />
@@ -14,16 +16,28 @@
       <change beforePath="$PROJECT_DIR$/out/production/App_Ejercicio/Clases/Rutina.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/App_Ejercicio/Clases/Rutina.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/App_Ejercicio/Clases/Socio.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/App_Ejercicio/Clases/Socio.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/App_Ejercicio/Controllers/ControllerSocio.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/App_Ejercicio/Controllers/ControllerSocio.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/App_Ejercicio/Enums/Exigencia.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/App_Ejercicio/Enums/Exigencia.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/App_Ejercicio/Enums/Sexo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/App_Ejercicio/Enums/Sexo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/App_Ejercicio/Enums/TipoMuscular.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/App_Ejercicio/Enums/TipoMuscular.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/App_Ejercicio/ListaEjercicios/Ejercicio.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/App_Ejercicio/ListaEjercicios/Ejercicio.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/App_Ejercicio/ListaEjercicios/ListaEjercicios.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/App_Ejercicio/ListaEjercicios/ListaEjercicios.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/App_Ejercicio/Login/AdapterLogin.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/App_Ejercicio/Login/AdapterLogin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/App_Ejercicio/Login/IAdapterLogin.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/App_Ejercicio/Login/IAdapterLogin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/App_Ejercicio/NotificacionTrofeo/Notificacion.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/App_Ejercicio/NotificacionTrofeo/Notificacion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/App_Ejercicio/NotificacionTrofeo/Notificador.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/App_Ejercicio/NotificacionTrofeo/Notificador.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/App_Ejercicio/Trofeos/Trofeo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/App_Ejercicio/Trofeos/Trofeo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/App_Ejercicio/Trofeos/TrofeoConstancia.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/App_Ejercicio/Trofeos/TrofeoConstancia.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/App_Ejercicio/Trofeos/TrofeoCreido.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/App_Ejercicio/Trofeos/TrofeoCreido.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/App_Ejercicio/Trofeos/TrofeoDedicacion.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/App_Ejercicio/Trofeos/TrofeoDedicacion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Clases/DiaEjercicio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Clases/DiaEjercicio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Clases/EjercicioRutina.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Clases/EjercicioRutina.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Clases/Objetivo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Clases/Objetivo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Clases/ObjetivoMantener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Clases/ObjetivoMantener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Clases/ObjetivoPerderPeso.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Clases/ObjetivoPerderPeso.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Clases/ObjetivoStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Clases/ObjetivoStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Clases/ObjetivoTonificar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Clases/ObjetivoTonificar.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Clases/Rutina.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Clases/Rutina.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Clases/Socio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Clases/Socio.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controllers/ControllerSocio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/ControllerSocio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ListaEjercicios/Ejercicio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ListaEjercicios/Ejercicio.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,13 +75,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="preferences.customizations" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "reference.projectsettings.compiler.javacompiler"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="Login" />
@@ -77,6 +92,8 @@
   </component>
   <component name="RunManager">
     <configuration name="SDK 16" type="Application" factoryName="Application">
+      <option name="ALTERNATIVE_JRE_PATH" value="17" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="App" />
       <module name="App_Ejercicio" />
       <method v="2">
@@ -125,16 +142,6 @@
           <properties class="java.lang.StackOverflowError" package="java.lang" />
           <option name="timeStamp" value="1" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Controllers/ControllerSocio.java</url>
-          <line>112</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Clases/Socio.java</url>
-          <line>111</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
