@@ -1,5 +1,9 @@
-package Clases;
+package Clases.objetivo;
 
+import Clases.DiaEjercicio;
+import Clases.EjercicioRutina;
+import Clases.Rutina;
+import Clases.objetivo.ObjetivoStrategy;
 import Enums.Exigencia;
 import Enums.TipoMuscular;
 import ListaEjercicios.Ejercicio;
@@ -7,24 +11,11 @@ import ListaEjercicios.Ejercicio;
 import java.util.ArrayList;
 import java.util.Random;
 
-
-interface _calculadoraPesoIdeal {
-    int calcular(int peso, double altura, char sexo);
-}
-
-public abstract class ObjetivoPerderPeso extends ObjetivoStrategy {
-    // dias : 1 hora hasta 1 hora y 30 minutos
-    // ejercicios: aerobico mayor igual a 3 y ejercitacion muscular cualquiera
-    private final int _duracionMaxima = 90;
-
-    private final int _pesoIdeal;
-    private final int _pesoInicial;
-
-    public ObjetivoPerderPeso(int peso, double altura, char sexo, _calculadoraPesoIdeal calculadora) {
-        this._pesoIdeal = calculadora.calcular(peso, altura, sexo);
-        this._pesoInicial = peso;
-    }
-
+public class ObjetivoTonificar extends ObjetivoStrategy {
+    // dias :  2 horas hasta 2 horas y 30 minutos
+    private final int _duracionMinima = 120;
+    // ejercicios: aerobico entre <= 4 y ejercitacion muscular fuerte
+    private final int _duracionMaxima = 150;
 
     public TipoMuscular elegirGrupoMuscular() {
         TipoMuscular[] values = TipoMuscular.values();
@@ -38,9 +29,10 @@ public abstract class ObjetivoPerderPeso extends ObjetivoStrategy {
         ArrayList<Ejercicio> ejerciciosDisponibles = new ArrayList<Ejercicio>();
         for (Ejercicio ejercicio : ejercicios) {
             var nivelAerobico = ejercicio.getNivelAerobico();
+            var exigencia = ejercicio.getExigencia();
             var tipoMuscular = ejercicio.getTipoMuscular();
 
-            if ((nivelAerobico >= 3) && (tipoMuscular == tipo)) {
+            if ((nivelAerobico <= 4) && exigencia == Exigencia.ALTO  && tipoMuscular == tipo) {
                 ejerciciosDisponibles.add(ejercicio);
             }
         }
@@ -50,13 +42,15 @@ public abstract class ObjetivoPerderPeso extends ObjetivoStrategy {
     public Rutina crearRutina(String[] dias) {
         var diasEjercicio = new ArrayList<DiaEjercicio>();
         for (String dia : dias) {
+
             var duracionActual = 0;
             TipoMuscular tipo = elegirGrupoMuscular();
             ArrayList<Ejercicio> ejerciciosDisponibles = elegirEjerciciosDisponibles(tipo);
             ArrayList<EjercicioRutina> ejerciciosElegidos = new ArrayList<EjercicioRutina>();
 
             for (Ejercicio ejercicio : ejerciciosDisponibles) {
-                if ((duracionActual + ejercicio.getDuracion()) > this._duracionMaxima) {
+
+                if ((duracionActual + ejercicio.getDuracion()) > _duracionMaxima) {
                     break;
                 }
 

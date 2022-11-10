@@ -1,5 +1,8 @@
-package Clases;
+package Clases.objetivo;
 
+import Clases.DiaEjercicio;
+import Clases.EjercicioRutina;
+import Clases.Rutina;
 import Enums.Exigencia;
 import Enums.TipoMuscular;
 import ListaEjercicios.Ejercicio;
@@ -7,11 +10,11 @@ import ListaEjercicios.Ejercicio;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class ObjetivoTonificar extends ObjetivoStrategy{
-    // dias :  2 horas hasta 2 horas y 30 minutos
-    private final int _duracionMinima = 120;
-    // ejercicios: aerobico entre <= 4 y ejercitacion muscular fuerte
-    private final int _duracionMaxima = 150;
+public class ObjetivoMantener extends ObjetivoStrategy {
+    // dias :  45 min hasta 1 hora y 20 minutos
+    private final int _duracionMinima = 45;
+    // ejercicios: aerobico entre 2 y 4 y ejercitacion muscular medio o bajo
+    private final int _duracionMaxima = 80;
 
     public TipoMuscular elegirGrupoMuscular() {
         TipoMuscular[] values = TipoMuscular.values();
@@ -28,7 +31,9 @@ public class ObjetivoTonificar extends ObjetivoStrategy{
             var exigencia = ejercicio.getExigencia();
             var tipoMuscular = ejercicio.getTipoMuscular();
 
-            if ((nivelAerobico <= 4) && exigencia == Exigencia.ALTO  && tipoMuscular == tipo) {
+            if ((nivelAerobico >= 2 && nivelAerobico <= 4) &&
+                    (exigencia == Exigencia.MEDIO || exigencia == Exigencia.BAJO) &&
+                    (tipoMuscular == tipo)) {
                 ejerciciosDisponibles.add(ejercicio);
             }
         }
@@ -36,6 +41,7 @@ public class ObjetivoTonificar extends ObjetivoStrategy{
     }
 
     public Rutina crearRutina(String[] dias) {
+
         var diasEjercicio = new ArrayList<DiaEjercicio>();
         for (String dia : dias) {
 

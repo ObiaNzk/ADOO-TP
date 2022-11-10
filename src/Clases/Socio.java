@@ -1,5 +1,10 @@
 package Clases;
 
+import Clases.medicion.Medicion;
+import Clases.objetivo.Objetivo;
+import Clases.objetivo.ObjetivoMantener;
+import Clases.objetivo.ObjetivoPerderPeso;
+import Clases.objetivo.ObjetivoTonificar;
 import Enums.Sexo;
 import Trofeos.Trofeo;
 import java.time.LocalDate;

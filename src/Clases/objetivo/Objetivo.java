@@ -1,4 +1,6 @@
-package Clases;
+package Clases.objetivo;
+
+import Clases.Rutina;
 
 public class Objetivo {
     private ObjetivoStrategy _estrategia;

@@ -1,4 +1,6 @@
-package Clases;
+package Clases.objetivo;
+
+import Clases.Rutina;
 
 import java.util.ArrayList;
 
