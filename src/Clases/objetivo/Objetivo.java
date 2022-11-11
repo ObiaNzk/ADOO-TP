@@ -18,6 +18,10 @@ public class Objetivo {
         return this._rutina;
     }
 
+    public ObjetivoStrategy getEstrategia() {
+        return _estrategia;
+    }
+
     public void mostrarRutina(int dia) {
 
     }

@@ -1,16 +1,12 @@
 package Clases.objetivo;
 
-import Clases.DiaEjercicio;
-import Clases.EjercicioRutina;
-import Clases.Rutina;
-import Clases.balanza;
+import Clases.*;
 import Enums.TipoMuscular;
 import ListaEjercicios.Ejercicio;
 
 import java.util.ArrayList;
 import java.util.Random;
-
-
+import java.util.Scanner;
 
 
 public class ObjetivoPerderPeso extends ObjetivoStrategy {
@@ -18,11 +14,18 @@ public class ObjetivoPerderPeso extends ObjetivoStrategy {
     // ejercicios: aerobico mayor igual a 3 y ejercitacion muscular cualquiera
     private final int _duracionMaxima = 90;
 
+    private int _pesoIdeal;
 
     private final balanza _balanza;
 
-    public int calcularPesoIdeal(int peso, double altura, char sexo){
-        return this._balanza.calcular(peso, altura, sexo);
+    private Socio _socio;
+
+
+    public int calcularPesoIdeal(int peso, double altura, char sexo) {
+        var pesoIdeal =  this._balanza.pesar(peso, altura, sexo);
+
+        this._pesoIdeal = pesoIdeal;
+        return pesoIdeal;
     }
 
     public ObjetivoPerderPeso(balanza balanza){
@@ -71,5 +74,33 @@ public class ObjetivoPerderPeso extends ObjetivoStrategy {
             diasEjercicio.add(new DiaEjercicio(dia, ejerciciosElegidos));
         }
         return new Rutina(diasEjercicio);
+    }
+
+    public boolean cumplioObjetivo() {
+      var cumplio = _socio.getPeso() == this._pesoIdeal;
+        if (!cumplio){
+            return false;
+        }
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Felicidades, cumpliste tu objetivo de perder peso :).");
+
+        while (true) {
+            System.out.println("Si queres cambiar tu objetivo a 'Mantener Figura' escribi 'SI', caso contrario escribi 'NO'.");
+            String cambiarObjetivo = scanner.nextLine();
+
+            switch (cambiarObjetivo) {
+                case "SI":
+                    System.out.println("Cambiando objetivo a 'Mantener Figura.");
+                    this._socio.getObjetivo().cambiarEstrategia(new ObjetivoMantener());
+                    return true;
+                case "NO":
+                    System.out.println("Tu objetivo no fue modificado.");
+                    return true;
+                default:
+                    System.out.println("Opción invalida, intente nuevamente");
+            }
+        }
+
     }
 }

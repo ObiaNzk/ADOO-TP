@@ -65,4 +65,9 @@ public class ObjetivoMantener extends ObjetivoStrategy {
         }
         return new Rutina(diasEjercicio);
     }
+
+
+    public boolean cumplioObjetivo() {
+        return true;
+    }
 }

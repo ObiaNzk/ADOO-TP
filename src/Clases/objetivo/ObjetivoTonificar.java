@@ -63,4 +63,8 @@ public class ObjetivoTonificar extends ObjetivoStrategy {
         }
         return new Rutina(diasEjercicio);
     }
+
+    public boolean cumplioObjetivo() {
+        return true;
+    }
 }
