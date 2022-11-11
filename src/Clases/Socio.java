@@ -39,7 +39,7 @@ public class Socio {
         if(objetivo.equals("1")) {
             System.out.println("Nuevo objetivo: Bajar de peso");
             System.out.println();
-            _objetivo.cambiarEstrategia(new ObjetivoPerderPeso());
+            _objetivo.cambiarEstrategia(new ObjetivoPerderPeso(new balanza()));
         } else if (objetivo.equals("2")) {
             System.out.println("Nuevo objetivo: Tonificar cuerpo");
             System.out.println();

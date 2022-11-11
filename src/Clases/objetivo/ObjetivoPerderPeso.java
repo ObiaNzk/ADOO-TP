@@ -3,6 +3,7 @@ package Clases.objetivo;
 import Clases.DiaEjercicio;
 import Clases.EjercicioRutina;
 import Clases.Rutina;
+import Clases.balanza;
 import Enums.TipoMuscular;
 import ListaEjercicios.Ejercicio;
 
@@ -10,23 +11,22 @@ import java.util.ArrayList;
 import java.util.Random;
 
 
-interface _calculadoraPesoIdeal {
-    int calcular(int peso, double altura, char sexo);
-}
+
 
 public class ObjetivoPerderPeso extends ObjetivoStrategy {
     // dias : 1 hora hasta 1 hora y 30 minutos
     // ejercicios: aerobico mayor igual a 3 y ejercitacion muscular cualquiera
     private final int _duracionMaxima = 90;
 
-    private int _pesoIdeal;
 
-    public void calcularPesoIdeal(int peso, double altura, char sexo, _calculadoraPesoIdeal calculadora){
-        this._pesoIdeal = calculadora.calcular(peso, altura, sexo);
+    private final balanza _balanza;
+
+    public int calcularPesoIdeal(int peso, double altura, char sexo){
+        return this._balanza.calcular(peso, altura, sexo);
     }
 
-    public int getPesoIdeal(){
-        return this._pesoIdeal;
+    public ObjetivoPerderPeso(balanza balanza){
+        this._balanza = balanza;
     }
 
     public TipoMuscular elegirGrupoMuscular() {
