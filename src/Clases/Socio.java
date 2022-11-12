@@ -198,17 +198,19 @@ public class Socio {
         ArrayList<DiaEjercicio> rutina = this.getObjetivo().getRutina().getDiaEjercicios();
         Scanner scanner = new Scanner(System.in);
         for(DiaEjercicio ejercicio : rutina) {
-            for (EjercicioRutina ejercicioRutina : ejercicio.getEjerciciosRutina()) {
-                ejercicioRutina.mostrarDatos();
-                System.out.println("Cantidad de series realizadas:");
-                String series = scanner.nextLine();
-                System.out.println("Cantidad de repeticiones realizadas:");
-                String repeticiones = scanner.nextLine();
-                System.out.println("Peso levantado:");
-                String peso = scanner.nextLine();
-                EjercicioRutina ejercicioActual = new EjercicioRutina(ejercicioRutina.getEjercicio(),
-                        Integer.parseInt(series), Integer.parseInt(repeticiones), Integer.parseInt(peso));
-                this._historialEjercicios.add(ejercicioActual);
+            if(ejercicio.getDia().equals(getDiaHoy())) {
+                for (EjercicioRutina ejercicioRutina : ejercicio.getEjerciciosRutina()) {
+                    ejercicioRutina.mostrarDatos();
+                    System.out.println("Cantidad de series realizadas:");
+                    String series = scanner.nextLine();
+                    System.out.println("Cantidad de repeticiones realizadas:");
+                    String repeticiones = scanner.nextLine();
+                    System.out.println("Peso levantado:");
+                    String peso = scanner.nextLine();
+                    EjercicioRutina ejercicioActual = new EjercicioRutina(ejercicioRutina.getEjercicio(),
+                            Integer.parseInt(series), Integer.parseInt(repeticiones), Integer.parseInt(peso));
+                    this._historialEjercicios.add(ejercicioActual);
+                }
             }
         }
     }
