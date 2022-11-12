@@ -1,6 +1,10 @@
 package Clases.objetivo;
 
 import Clases.*;
+import Clases.medicion.medicion;
+import Clases.medicion.medicionAdapter;
+import Clases.medicion.medidorExterno;
+import Enums.Sexo;
 import Enums.TipoMuscular;
 import ListaEjercicios.Ejercicio;
 
@@ -15,21 +19,20 @@ public class ObjetivoPerderPeso extends ObjetivoStrategy {
 
     private int _pesoIdeal;
 
-    private final balanza _balanza;
+    private final medicionAdapter _balanza = new medicion(new medidorExterno());
 
     private final Socio _socio;
 
 
     public ObjetivoPerderPeso(Socio socio){
         this._socio = socio;
-        this._balanza = new balanza();
     }
 
-    public int calcularPesoIdeal(int peso, double altura, char sexo) {
-        var pesoIdeal =  this._balanza.pesar(peso, altura, sexo);
+    public int calcularPesoIdeal(int peso, double altura, Sexo sexo) {
+        var pesoIdeal =  this._balanza.medir(altura, sexo);
 
-        this._pesoIdeal = pesoIdeal;
-        return pesoIdeal;
+        this._pesoIdeal = pesoIdeal.getPeso();
+        return this._pesoIdeal;
     }
 
     public TipoMuscular elegirGrupoMuscular() {
@@ -76,7 +79,7 @@ public class ObjetivoPerderPeso extends ObjetivoStrategy {
     }
 
     public boolean cumplioObjetivo() {
-      var cumplio = _socio.getPeso() == this._pesoIdeal;
+      var cumplio = _socio.getMedicion().getPeso() == this._pesoIdeal;
         if (!cumplio){
             return false;
         }
