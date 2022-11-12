@@ -23,7 +23,7 @@ public class Socio {
     private String _apellido;
     private LocalDate _fechaNacimiento;
     private Sexo _sexo;
-    private Double _altura;
+    private Double _altura = 1.75;
     private String[] _diasEntrenamiento;
     private Objetivo _objetivo;
     private ArrayList<Trofeo> _trofeos = new ArrayList<Trofeo>();
@@ -136,7 +136,7 @@ public class Socio {
         }
 
         this.cambiarObjetivo(elegido);
-
+        this.getObjetivo().crearRutina(this._diasEntrenamiento);
     }
 
     public void elegirDiasEntrenamiento() {
@@ -207,7 +207,7 @@ public class Socio {
 
     public void entrenar() {
         String hoy = getDiaHoy();
-        this.getObjetivo().crearRutina(this._diasEntrenamiento);
+        // this.getObjetivo().crearRutina(this._diasEntrenamiento);
         boolean diaEntrenamiento = hayDiaEntrenamiento();
         if (diaEntrenamiento) {
             System.out.println("Ejercicios del día:");
@@ -231,7 +231,7 @@ public class Socio {
         Scanner scanner = new Scanner(System.in);
         for (DiaEjercicio ejercicio : rutina) {
             for (EjercicioRutina ejercicioRutina : ejercicio.getEjerciciosRutina()) {
-                ejercicioRutina.mostrarDatos();
+                ejercicioRutina.instrucciones();
                 System.out.println("Cantidad de series realizadas:");
                 String series = scanner.nextLine();
                 System.out.println("Cantidad de repeticiones realizadas:");
@@ -263,4 +263,7 @@ public class Socio {
         return this.getObjetivo().getEstrategia().cumplioObjetivo();
     }
 
+    public void reforzarRutina() {
+        this.getObjetivo().reforzarRutina();
+    }
 }

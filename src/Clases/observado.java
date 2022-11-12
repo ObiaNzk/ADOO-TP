@@ -17,8 +17,5 @@ public class observado {
         observadores.remove(observador);
     }
     
-    public void NotificarObservador(Socio socio) {
-            observadores.stream().filter(x -)
-        	observador.Notificar();
-    }
+    public void NotificarObservador(Socio socio) { }
 }

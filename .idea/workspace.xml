@@ -3,7 +3,24 @@
   <component name="ChangeListManager">
     <list default="true" id="e957b87e-793c-4a37-876f-f9528bece9dd" name="Changes" comment="Facu 26/10/2022 9.50am">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/App_Ejercicio/Clases/Medicion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/App_Ejercicio/Clases/Objetivo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/App_Ejercicio/Clases/ObjetivoMantener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/App_Ejercicio/Clases/ObjetivoPerderPeso.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/App_Ejercicio/Clases/ObjetivoStrategy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/App_Ejercicio/Clases/ObjetivoTonificar.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/App_Ejercicio/Clases/Socio.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/App_Ejercicio/Clases/Socio.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/App_Ejercicio/Controllers/ControllerSocio.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/App_Ejercicio/Controllers/ControllerSocio.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Clases/EjercicioRutina.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Clases/EjercicioRutina.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Clases/Rutina.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Clases/Rutina.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Clases/Socio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Clases/Socio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Clases/objetivo/Objetivo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Clases/objetivo/Objetivo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Clases/objetivo/ObjetivoMantener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Clases/objetivo/ObjetivoMantener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Clases/objetivo/ObjetivoPerderPeso.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Clases/objetivo/ObjetivoPerderPeso.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Clases/objetivo/ObjetivoTonificar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Clases/objetivo/ObjetivoTonificar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Clases/observado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Clases/observado.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/ControllerSocio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/ControllerSocio.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

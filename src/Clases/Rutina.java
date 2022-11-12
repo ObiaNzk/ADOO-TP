@@ -17,4 +17,5 @@ public class Rutina {
     public ArrayList<DiaEjercicio> getDiaEjercicios() {
         return this._dias;
     }
+
 }

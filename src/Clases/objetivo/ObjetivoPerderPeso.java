@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
-
 public class ObjetivoPerderPeso extends ObjetivoStrategy {
     // dias : 1 hora hasta 1 hora y 30 minutos
     // ejercicios: aerobico mayor igual a 3 y ejercitacion muscular cualquiera
@@ -46,7 +45,6 @@ public class ObjetivoPerderPeso extends ObjetivoStrategy {
         for (Ejercicio ejercicio : ejercicios) {
             var nivelAerobico = ejercicio.getNivelAerobico();
             var tipoMuscular = ejercicio.getTipoMuscular();
-
             if ((nivelAerobico >= 3) && (tipoMuscular == tipo)) {
                 ejerciciosDisponibles.add(ejercicio);
             }
@@ -67,7 +65,7 @@ public class ObjetivoPerderPeso extends ObjetivoStrategy {
                     break;
                 }
 
-                var ejercicioRutina = new EjercicioRutina(ejercicio, 4, 10, 15);
+                var ejercicioRutina = new EjercicioRutina(ejercicio, 2, 15, 8);
                 ejerciciosElegidos.add(ejercicioRutina);
                 duracionActual += ejercicio.getDuracion();
             }
