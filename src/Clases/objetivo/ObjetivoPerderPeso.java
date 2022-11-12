@@ -18,18 +18,19 @@ public class ObjetivoPerderPeso extends ObjetivoStrategy {
 
     private final balanza _balanza;
 
-    private Socio _socio;
+    private final Socio _socio;
 
+
+    public ObjetivoPerderPeso(Socio socio){
+        this._socio = socio;
+        this._balanza = new balanza();
+    }
 
     public int calcularPesoIdeal(int peso, double altura, char sexo) {
         var pesoIdeal =  this._balanza.pesar(peso, altura, sexo);
 
         this._pesoIdeal = pesoIdeal;
         return pesoIdeal;
-    }
-
-    public ObjetivoPerderPeso(balanza balanza){
-        this._balanza = balanza;
     }
 
     public TipoMuscular elegirGrupoMuscular() {
@@ -92,7 +93,7 @@ public class ObjetivoPerderPeso extends ObjetivoStrategy {
             switch (cambiarObjetivo) {
                 case "SI":
                     System.out.println("Cambiando objetivo a 'Mantener Figura.");
-                    this._socio.getObjetivo().cambiarEstrategia(new ObjetivoMantener());
+                    this._socio.getObjetivo().cambiarEstrategia(new ObjetivoMantener(_socio));
                     return true;
                 case "NO":
                     System.out.println("Tu objetivo no fue modificado.");

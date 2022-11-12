@@ -42,15 +42,15 @@ public class Socio {
         if (objetivo.equals("1")) {
             System.out.println("Nuevo objetivo: Bajar de peso");
             System.out.println();
-            _objetivo.cambiarEstrategia(new ObjetivoPerderPeso(new balanza()));
+            _objetivo.cambiarEstrategia(new ObjetivoPerderPeso(this));
         } else if (objetivo.equals("2")) {
             System.out.println("Nuevo objetivo: Tonificar cuerpo");
             System.out.println();
-            _objetivo.cambiarEstrategia(new ObjetivoTonificar());
+            _objetivo.cambiarEstrategia(new ObjetivoTonificar(this));
         } else if (objetivo.equals("3")) {
             System.out.println("Nuevo objetivo: Mantener la figura");
             System.out.println();
-            _objetivo.cambiarEstrategia(new ObjetivoMantener());
+            _objetivo.cambiarEstrategia(new ObjetivoMantener(this));
         } else {
             System.out.println("Opcion incorrecta.");
         }

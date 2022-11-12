@@ -3,6 +3,7 @@ package Clases.objetivo;
 import Clases.DiaEjercicio;
 import Clases.EjercicioRutina;
 import Clases.Rutina;
+import Clases.Socio;
 import Enums.Exigencia;
 import Enums.TipoMuscular;
 import ListaEjercicios.Ejercicio;
@@ -15,6 +16,12 @@ public class ObjetivoMantener extends ObjetivoStrategy {
     private final int _duracionMinima = 45;
     // ejercicios: aerobico entre 2 y 4 y ejercitacion muscular medio o bajo
     private final int _duracionMaxima = 80;
+
+    private final Socio _socio;
+
+    public ObjetivoMantener(Socio socio){
+        this._socio = socio;
+    }
 
     public TipoMuscular elegirGrupoMuscular() {
         TipoMuscular[] values = TipoMuscular.values();
