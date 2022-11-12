@@ -71,7 +71,7 @@ public class ObjetivoTonificar extends ObjetivoStrategy {
                     break;
                 }
 
-                var ejercicioRutina = new EjercicioRutina(ejercicio, 4, 10, 15);
+                var ejercicioRutina = new EjercicioRutina(ejercicio, 2, 12, 4);
                 ejerciciosElegidos.add(ejercicioRutina);
                 duracionActual += ejercicio.getDuracion();
             }

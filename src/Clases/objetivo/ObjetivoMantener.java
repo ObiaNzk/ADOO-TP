@@ -16,8 +16,9 @@ import static java.lang.Math.abs;
 
 public class ObjetivoMantener extends ObjetivoStrategy {
     // dias :  45 min hasta 1 hora y 20 minutos
-    private final int _duracionMinima = 45;
     // ejercicios: aerobico entre 2 y 4 y ejercitacion muscular medio o bajo
+
+    private final int _duracionMinima = 45;
     private final int _duracionMaxima = 80;
 
     private final Socio _socio;
@@ -79,7 +80,7 @@ public class ObjetivoMantener extends ObjetivoStrategy {
                     break;
                 }
 
-                var ejercicioRutina = new EjercicioRutina(ejercicio, 4, 10, 15);
+                var ejercicioRutina = new EjercicioRutina(ejercicio, 2, 10, 5);
                 ejerciciosElegidos.add(ejercicioRutina);
                 duracionActual += ejercicio.getDuracion();
             }
