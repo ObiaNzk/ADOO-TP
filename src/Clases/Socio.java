@@ -1,6 +1,8 @@
 package Clases;
 
-import Clases.medicion.Medicion;
+import Clases.medicion.medicion;
+import Clases.medicion.medicionAdapter;
+import Clases.medicion.medidorExterno;
 import Clases.objetivo.Objetivo;
 import Clases.objetivo.ObjetivoMantener;
 import Clases.objetivo.ObjetivoPerderPeso;
@@ -28,6 +30,9 @@ public class Socio {
     private ArrayList<EjercicioRutina> _historialEjercicios = new ArrayList<>();
     private int _peso;
 
+    private int _masaMuscular;
+    private int _grasaCorporal;
+
 
     public Socio(String nombre, String apellido, int dni, LocalDate fechaNacimiento, Sexo sexo) {
         this._dni = dni;
@@ -36,6 +41,22 @@ public class Socio {
         this._fechaNacimiento = fechaNacimiento;
         this._sexo = sexo;
         this._objetivo = new Objetivo();
+    }
+
+    public int getMasaMuscular(){
+        return this._masaMuscular;
+    }
+    public int getGrasaCorporal(){
+        return this._grasaCorporal;
+    }
+
+
+    public Sexo getSexo() {
+        return this._sexo;
+    }
+
+    public double getAltura() {
+        return this._altura;
     }
 
     public void cambiarObjetivo(String objetivo) {
@@ -70,11 +91,6 @@ public class Socio {
 
     public void registrarMedicion() {
 
-    }
-
-    public Medicion getValoresIdeales() {
-        Medicion medicion = null;
-        return medicion;
     }
 
 

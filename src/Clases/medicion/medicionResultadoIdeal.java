@@ -1,6 +1,6 @@
 package Clases.medicion;
 
-public class medicionResultado {
+public class medicionResultadoIdeal {
     private int _masaMuscular;
     private int _grasaCorporal;
 

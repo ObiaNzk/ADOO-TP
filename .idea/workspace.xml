@@ -2,10 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e957b87e-793c-4a37-876f-f9528bece9dd" name="Changes" comment="Facu 26/10/2022 9.50am">
+      <change afterPath="$PROJECT_DIR$/src/Clases/medicion/medicionAdapter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Clases/Socio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Clases/Socio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Clases/objetivo/ObjetivoMantener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Clases/objetivo/ObjetivoMantener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Clases/objetivo/ObjetivoPerderPeso.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Clases/objetivo/ObjetivoPerderPeso.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Clases/medicion/Medicion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Clases/medicion/medicion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Clases/medicion/medicionResultado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Clases/medicion/medicionResultadoIdeal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Clases/medicion/medidorExterno.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Clases/medicion/medidorExterno.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Clases/objetivo/ObjetivoTonificar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Clases/objetivo/ObjetivoTonificar.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -17,8 +19,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>

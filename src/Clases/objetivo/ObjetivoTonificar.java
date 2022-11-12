@@ -4,6 +4,10 @@ import Clases.DiaEjercicio;
 import Clases.EjercicioRutina;
 import Clases.Rutina;
 import Clases.Socio;
+import Clases.medicion.medicion;
+import Clases.medicion.medicionAdapter;
+import Clases.medicion.medicionResultadoIdeal;
+import Clases.medicion.medidorExterno;
 import Clases.objetivo.ObjetivoStrategy;
 import Enums.Exigencia;
 import Enums.TipoMuscular;
@@ -21,8 +25,13 @@ public class ObjetivoTonificar extends ObjetivoStrategy {
 
     private final Socio _socio;
 
+    private final medicionResultadoIdeal _medicionIdeal;
+
+    private final medicionAdapter _medidor = new medicion(new medidorExterno());
+
     public ObjetivoTonificar(Socio socio) {
         this._socio = socio;
+        this._medicionIdeal  = this._medidor.medir(socio.getAltura(),socio.getPeso(), socio.getSexo());
     }
 
     public TipoMuscular elegirGrupoMuscular() {
@@ -73,13 +82,16 @@ public class ObjetivoTonificar extends ObjetivoStrategy {
     }
 
     public boolean cumplioObjetivo() {
-        var cumplio = _socio.getPeso() == this._pesoIdeal;
-        if (!cumplio) {
+        var masaMuscularActual = this._socio.getMasaMuscular();
+        var grasaCorporalActual = this._socio.getGrasaCorporal();
+
+        if ((masaMuscularActual != this._medicionIdeal.getmasaMuscular())||(grasaCorporalActual != this._medicionIdeal.getgrasaCorporal())){
             return false;
         }
 
+
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Felicidades, cumpliste tu objetivo de perder peso :).");
+        System.out.println("Felicidades, cumpliste tu objetivo de Tonificar :).");
 
         while (true) {
             System.out.println("Si queres cambiar tu objetivo a 'Mantener Figura' escribi 'SI', caso contrario escribi 'NO'.");
@@ -88,7 +100,7 @@ public class ObjetivoTonificar extends ObjetivoStrategy {
             switch (cambiarObjetivo) {
                 case "SI":
                     System.out.println("Cambiando objetivo a 'Mantener Figura.");
-                    this._socio.getObjetivo().cambiarEstrategia(new ObjetivoMantener());
+                    this._socio.getObjetivo().cambiarEstrategia(new ObjetivoMantener(this._socio));
                     return true;
                 case "NO":
                     System.out.println("Tu objetivo no fue modificado.");
