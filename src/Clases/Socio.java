@@ -2,6 +2,7 @@ package Clases;
 
 import Clases.medicion.medicion;
 import Clases.medicion.medicionAdapter;
+import Clases.medicion.medicionResultado;
 import Clases.medicion.medidorExterno;
 import Clases.objetivo.Objetivo;
 import Clases.objetivo.ObjetivoMantener;
@@ -28,10 +29,8 @@ public class Socio {
     private Objetivo _objetivo;
     private ArrayList<Trofeo> _trofeos = new ArrayList<Trofeo>();
     private ArrayList<EjercicioRutina> _historialEjercicios = new ArrayList<>();
-    private int _peso;
 
-    private int _masaMuscular;
-    private int _grasaCorporal;
+    private medicionResultado _medicion;
 
 
     public Socio(String nombre, String apellido, int dni, LocalDate fechaNacimiento, Sexo sexo) {
@@ -41,13 +40,6 @@ public class Socio {
         this._fechaNacimiento = fechaNacimiento;
         this._sexo = sexo;
         this._objetivo = new Objetivo();
-    }
-
-    public int getMasaMuscular(){
-        return this._masaMuscular;
-    }
-    public int getGrasaCorporal(){
-        return this._grasaCorporal;
     }
 
 
@@ -77,20 +69,16 @@ public class Socio {
         }
     }
 
-    public void setPeso(int peso) {
-        this._peso = peso;
+    public void setMedicion(medicionResultado resultado) {
+        this._medicion = resultado;
     }
 
-    public int getPeso() {
-        return this._peso;
+    public medicionResultado getMedicion() {
+        return this._medicion;
     }
 
     public int edad() {
         return Math.toIntExact(ChronoUnit.YEARS.between(_fechaNacimiento, LocalDate.now()));
-    }
-
-    public void registrarMedicion() {
-
     }
 
 

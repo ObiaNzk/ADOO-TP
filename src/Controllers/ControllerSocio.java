@@ -1,6 +1,9 @@
 package Controllers;
 
 import Clases.Socio;
+import Clases.medicion.medicion;
+import Clases.medicion.medicionAdapter;
+import Clases.medicion.medidorExterno;
 import Enums.Sexo;
 import Login.AdapterLogin;
 import Login.IAdapterLogin;
@@ -16,6 +19,8 @@ public class ControllerSocio {
     private static ControllerSocio _controllerSocio = null;
     private Socio _socioLogueado = null;
     private IAdapterLogin adapterLogin = new AdapterLogin();
+
+    private final medicionAdapter _balanza = new medicion(new medidorExterno());
 
     Scanner scanner = new Scanner(System.in);
 
@@ -145,7 +150,7 @@ public class ControllerSocio {
                 _socioLogueado.getTrofeos();
                 break;
             case "7":
-                _socioLogueado.registrarMedicion();
+                _socioLogueado.setMedicion(this._balanza.medir(_socioLogueado.getAltura(),_socioLogueado.getSexo()));
                 break;
             case "8":
                 return;

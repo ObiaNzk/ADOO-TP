@@ -3,5 +3,5 @@ package Clases.medicion;
 import Enums.Sexo;
 
 public interface medicionAdapter {
-    medicionResultadoIdeal medir(double altura, int peso, Sexo sexo) ;
+    medicionResultado medir(double altura, Sexo sexo) ;
 }

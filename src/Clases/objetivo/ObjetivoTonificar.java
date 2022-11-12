@@ -6,9 +6,8 @@ import Clases.Rutina;
 import Clases.Socio;
 import Clases.medicion.medicion;
 import Clases.medicion.medicionAdapter;
-import Clases.medicion.medicionResultadoIdeal;
+import Clases.medicion.medicionResultado;
 import Clases.medicion.medidorExterno;
-import Clases.objetivo.ObjetivoStrategy;
 import Enums.Exigencia;
 import Enums.TipoMuscular;
 import ListaEjercicios.Ejercicio;
@@ -25,13 +24,13 @@ public class ObjetivoTonificar extends ObjetivoStrategy {
 
     private final Socio _socio;
 
-    private final medicionResultadoIdeal _medicionIdeal;
+    private final medicionResultado _medicionIdeal;
 
     private final medicionAdapter _medidor = new medicion(new medidorExterno());
 
     public ObjetivoTonificar(Socio socio) {
         this._socio = socio;
-        this._medicionIdeal  = this._medidor.medir(socio.getAltura(),socio.getPeso(), socio.getSexo());
+        this._medicionIdeal  = this._medidor.medir(socio.getAltura(), socio.getSexo());
     }
 
     public TipoMuscular elegirGrupoMuscular() {
@@ -82,10 +81,10 @@ public class ObjetivoTonificar extends ObjetivoStrategy {
     }
 
     public boolean cumplioObjetivo() {
-        var masaMuscularActual = this._socio.getMasaMuscular();
-        var grasaCorporalActual = this._socio.getGrasaCorporal();
+        var medicionActual = this._socio.getMedicion();
 
-        if ((masaMuscularActual != this._medicionIdeal.getmasaMuscular())||(grasaCorporalActual != this._medicionIdeal.getgrasaCorporal())){
+
+        if ((medicionActual.getmasaMuscular() != this._medicionIdeal.getmasaMuscular())||(medicionActual.getgrasaCorporal() != this._medicionIdeal.getgrasaCorporal())){
             return false;
         }
 
