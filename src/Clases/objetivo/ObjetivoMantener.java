@@ -10,6 +10,9 @@ import ListaEjercicios.Ejercicio;
 
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.Scanner;
+
+import static java.lang.Math.abs;
 
 public class ObjetivoMantener extends ObjetivoStrategy {
     // dias :  45 min hasta 1 hora y 20 minutos
@@ -19,8 +22,21 @@ public class ObjetivoMantener extends ObjetivoStrategy {
 
     private final Socio _socio;
 
-    public ObjetivoMantener(Socio socio){
+    private final int _pesoInicial;
+
+    private int _variacionObjetivo = 4;
+
+    public ObjetivoMantener(Socio socio) {
         this._socio = socio;
+        this._pesoInicial = socio.getPeso();
+    }
+
+    private int getVariacionObjetivo() {
+        return this._variacionObjetivo;
+    }
+
+    private void setvariacionObjetivo(int valor) {
+        this._variacionObjetivo = valor;
     }
 
     public TipoMuscular elegirGrupoMuscular() {
@@ -75,6 +91,10 @@ public class ObjetivoMantener extends ObjetivoStrategy {
 
 
     public boolean cumplioObjetivo() {
+        if (abs(this._socio.getPeso() - this._pesoInicial) > this._variacionObjetivo) {
+            return false;
+        }
+        System.out.println("Felicidades, cumpliste tu objetivo de Mantener tu peso :).");
         return true;
     }
 }
