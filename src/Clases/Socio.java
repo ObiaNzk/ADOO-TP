@@ -1,10 +1,10 @@
 package Clases;
 
+import Clases.Medicion.MedicionResultado;
 import Clases.Objetivo.Objetivo;
 import Clases.Objetivo.ObjetivoMantener;
 import Clases.Objetivo.ObjetivoPerderPeso;
 import Clases.Objetivo.ObjetivoTonificar;
-import Clases.Medicion.MedicionResultado;
 import Enums.Sexo;
 import Trofeos.Trofeo;
 import Trofeos.TrofeoConstancia;
@@ -265,22 +265,38 @@ public class Socio {
             System.out.println();
             System.out.println("¡Felicitaciones!\nGanaste el Trofeo a la Constancia por cumplir tu rutina a la perfección");
             System.out.println();
-            this.getTrofeos();
         }
     }
 
     public void getProgeso() {
-        System.out.println("comenzando entrenamiento...");
+        if(_historialEjercicios.size() == 0){
+            System.out.println();
+            System.out.println("Para ver tu progreso, debes comenzar a realizar ejercicios.");
+            System.out.println();
+        } else {
+            System.out.println();
+            System.out.println("Ejercicios realizados: ");
+            for (DiaEjercicio ejercicio : _historialEjercicios) {
+                for (EjercicioRutina ejercicioRutina : ejercicio.getEjerciciosRutina()) {
+                    ejercicioRutina.mostrarDatos();
+                }
+            }
+            System.out.println();
+        }
     }
 
     public void getTrofeos() {
         if (this._trofeos.size() > 0) {
+            System.out.println();
+            System.out.println("Obtuviste los siguientes trofeos: ");
             for (Trofeo trofeo : this._trofeos) {
-                System.out.println(trofeo);
+                System.out.print("* ");
+                System.out.println(trofeo.getNombre());
             }
         } else {
             System.out.println("Aún no tiene ningún trofeo");
         }
+        System.out.println();
     }
 
     public boolean cumplioObjetivo() {

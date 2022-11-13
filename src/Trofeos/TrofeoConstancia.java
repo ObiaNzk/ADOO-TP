@@ -12,6 +12,10 @@ public class TrofeoConstancia extends Trofeo{
     private Notificador _notificador;
     private Socio _socio;
 
+    public TrofeoConstancia() {
+        this.setNombre("Trofeo a la Constancia");
+    }
+
     public static boolean chequearPremio(Rutina rutina, ArrayList<DiaEjercicio> historial){
         boolean cumplido = true;
 
