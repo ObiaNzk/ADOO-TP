@@ -2,29 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e957b87e-793c-4a37-876f-f9528bece9dd" name="Changes" comment="Facu 26/10/2022 9.50am">
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/App_Ejercicio/Clases/DiaEjercicio.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/App_Ejercicio/Clases/DiaEjercicio.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/App_Ejercicio/Clases/Rutina.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/App_Ejercicio/Clases/Rutina.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/App_Ejercicio/Clases/Socio.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/App_Ejercicio/Clases/Socio.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/App_Ejercicio/Controllers/ControllerSocio.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/App_Ejercicio/Controllers/ControllerSocio.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/App_Ejercicio/Trofeos/TrofeoConstancia.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/App_Ejercicio/Trofeos/TrofeoConstancia.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/App_Ejercicio/Trofeos/TrofeoDedicacion.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/App_Ejercicio/Trofeos/TrofeoDedicacion.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Clases/DiaEjercicio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Clases/DiaEjercicio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Clases/Rutina.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Clases/Rutina.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Clases/Medicion/medicion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Clases/Medicion/Medicion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Clases/Medicion/medicionAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Clases/Medicion/MedicionAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Clases/Medicion/medicionResultado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Clases/Medicion/MedicionResultado.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Clases/Medicion/medidorExterno.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Clases/Medicion/MedidorExterno.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Clases/Objetivo/ObjetivoMantener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Clases/Objetivo/ObjetivoMantener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Clases/Objetivo/ObjetivoPerderPeso.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Clases/Objetivo/ObjetivoPerderPeso.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Clases/Objetivo/ObjetivoTonificar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Clases/Objetivo/ObjetivoTonificar.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Clases/Socio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Clases/Socio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Clases/medicion/medicion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Clases/Medicion/medicion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Clases/medicion/medicionAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Clases/Medicion/medicionAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Clases/medicion/medicionResultado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Clases/Medicion/medicionResultado.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Clases/medicion/medidorExterno.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Clases/Medicion/medidorExterno.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Clases/objetivo/Objetivo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Clases/Objetivo/Objetivo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Clases/objetivo/ObjetivoMantener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Clases/Objetivo/ObjetivoMantener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Clases/objetivo/ObjetivoPerderPeso.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Clases/Objetivo/ObjetivoPerderPeso.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Clases/objetivo/ObjetivoStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Clases/Objetivo/ObjetivoStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Clases/objetivo/ObjetivoTonificar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Clases/Objetivo/ObjetivoTonificar.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controllers/ControllerSocio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/ControllerSocio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Trofeos/TrofeoConstancia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Trofeos/TrofeoConstancia.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Trofeos/TrofeoDedicacion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Trofeos/TrofeoDedicacion.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,11 +117,6 @@
           <properties class="java.lang.StackOverflowError" package="java.lang" />
           <option name="timeStamp" value="1" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Clases/Socio.java</url>
-          <line>241</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

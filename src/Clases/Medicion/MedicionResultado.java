@@ -1,6 +1,6 @@
 package Clases.Medicion;
 
-public class medicionResultado {
+public class MedicionResultado {
     private int _masaMuscular;
     private int _grasaCorporal;
 
@@ -15,11 +15,11 @@ public class medicionResultado {
         return this._grasaCorporal;
     }
 
-    public void setmasaMuscular(int masa) {
+    public void setMasaMuscular(int masa) {
         this._masaMuscular = masa;
     }
 
-    public void setgrasaCorporal(int grasa) {
+    public void setGrasaCorporal(int grasa) {
         this._grasaCorporal = grasa;
     }
 

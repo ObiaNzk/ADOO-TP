@@ -1,9 +1,9 @@
 package Controllers;
 
 import Clases.Socio;
-import Clases.Medicion.medicion;
-import Clases.Medicion.medicionAdapter;
-import Clases.Medicion.medidorExterno;
+import Clases.Medicion.Medicion;
+import Clases.Medicion.MedicionAdapter;
+import Clases.Medicion.MedidorExterno;
 import Enums.Sexo;
 import Login.AdapterLogin;
 import Login.IAdapterLogin;
@@ -19,7 +19,7 @@ public class ControllerSocio {
     private Socio _socioLogueado = null;
     private IAdapterLogin adapterLogin = new AdapterLogin();
 
-    private final medicionAdapter _balanza = new medicion(new medidorExterno());
+    private final MedicionAdapter _balanza = new Medicion(new MedidorExterno());
 
     Scanner scanner = new Scanner(System.in);
 

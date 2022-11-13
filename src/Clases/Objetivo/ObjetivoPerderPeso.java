@@ -1,9 +1,9 @@
 package Clases.Objetivo;
 
 import Clases.*;
-import Clases.Medicion.medicion;
-import Clases.Medicion.medicionAdapter;
-import Clases.Medicion.medidorExterno;
+import Clases.Medicion.Medicion;
+import Clases.Medicion.MedicionAdapter;
+import Clases.Medicion.MedidorExterno;
 import Enums.Sexo;
 import Enums.TipoMuscular;
 import ListaEjercicios.Ejercicio;
@@ -19,7 +19,7 @@ public class ObjetivoPerderPeso extends ObjetivoStrategy {
 
     private int _pesoIdeal;
 
-    private final medicionAdapter _balanza = new medicion(new medidorExterno());
+    private final MedicionAdapter _balanza = new Medicion(new MedidorExterno());
 
     private final Socio _socio;
 

@@ -4,7 +4,7 @@ import Clases.Objetivo.Objetivo;
 import Clases.Objetivo.ObjetivoMantener;
 import Clases.Objetivo.ObjetivoPerderPeso;
 import Clases.Objetivo.ObjetivoTonificar;
-import Clases.Medicion.medicionResultado;
+import Clases.Medicion.MedicionResultado;
 import Enums.Sexo;
 import Trofeos.Trofeo;
 import Trofeos.TrofeoConstancia;
@@ -14,6 +14,7 @@ import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Scanner;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class Socio {
     private int _dni;
@@ -28,7 +29,7 @@ public class Socio {
     private ArrayList<Trofeo> _trofeos = new ArrayList<Trofeo>();
     private ArrayList<DiaEjercicio> _historialEjercicios = new ArrayList<>();
 
-    private medicionResultado _medicion;
+    private MedicionResultado _medicion;
 
 
     public Socio(String nombre, String apellido, int dni, LocalDate fechaNacimiento, Sexo sexo) {
@@ -38,8 +39,26 @@ public class Socio {
         this._fechaNacimiento = fechaNacimiento;
         this._sexo = sexo;
         this._objetivo = new Objetivo();
+
+        setMedicionInicial();
+
     }
 
+
+
+    private void setMedicionInicial() {
+        _medicion = new MedicionResultado();
+
+        _medicion.setPeso(ThreadLocalRandom
+                .current()
+                .nextInt(50,100));
+        _medicion.setGrasaCorporal(ThreadLocalRandom
+                .current()
+                .nextInt(8,20));
+        _medicion.setMasaMuscular(ThreadLocalRandom
+                .current()
+                .nextInt(35,45));
+    }
 
     public Sexo getSexo() {
         return this._sexo;
@@ -67,11 +86,11 @@ public class Socio {
         }
     }
 
-    public void setMedicion(medicionResultado resultado) {
+    public void setMedicion(MedicionResultado resultado) {
         this._medicion = resultado;
     }
 
-    public medicionResultado getMedicion() {
+    public MedicionResultado getMedicion() {
         return this._medicion;
     }
 
@@ -244,7 +263,7 @@ public class Socio {
             trofeo.notificadoPor(this);
             _trofeos.add(trofeo);
             System.out.println();
-            System.out.println("¡Felicitaciones!\nGanaste el Trofeo a la Dedicación por cumplir tu rutina a la perfección");
+            System.out.println("¡Felicitaciones!\nGanaste el Trofeo a la Constancia por cumplir tu rutina a la perfección");
             System.out.println();
             this.getTrofeos();
         }

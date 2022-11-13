@@ -22,13 +22,13 @@ public class ObjetivoMantener extends ObjetivoStrategy {
 
     private final Socio _socio;
 
-    private final int _pesoInicial = 80;
+    private int _pesoInicial;
 
     private int _variacionObjetivo = 4;
 
     public ObjetivoMantener(Socio socio) {
         this._socio = socio;
-        // this._pesoInicial = socio.getMedicion().getPeso();
+        this._pesoInicial = socio.getMedicion().getPeso();
     }
 
     private int getVariacionObjetivo() {
@@ -93,13 +93,13 @@ public class ObjetivoMantener extends ObjetivoStrategy {
 
 
     public boolean cumplioObjetivo() {
-        /*
+
         if (abs(this._socio.getMedicion().getPeso() - this._pesoInicial) > this._variacionObjetivo) {
             return false;
+        } else {
+            System.out.println("Felicidades, cumpliste tu objetivo de Mantener tu peso :).");
+            return true;
         }
-        System.out.println("Felicidades, cumpliste tu objetivo de Mantener tu peso :).");
-        return true;
-        */
-        return false;
+
     }
 }

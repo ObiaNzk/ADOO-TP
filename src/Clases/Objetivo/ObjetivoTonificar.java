@@ -4,10 +4,10 @@ import Clases.DiaEjercicio;
 import Clases.EjercicioRutina;
 import Clases.Rutina;
 import Clases.Socio;
-import Clases.Medicion.medicion;
-import Clases.Medicion.medicionAdapter;
-import Clases.Medicion.medicionResultado;
-import Clases.Medicion.medidorExterno;
+import Clases.Medicion.Medicion;
+import Clases.Medicion.MedicionAdapter;
+import Clases.Medicion.MedicionResultado;
+import Clases.Medicion.MedidorExterno;
 import Enums.Exigencia;
 import Enums.TipoMuscular;
 import ListaEjercicios.Ejercicio;
@@ -24,9 +24,9 @@ public class ObjetivoTonificar extends ObjetivoStrategy {
 
     private final Socio _socio;
 
-    private final medicionResultado _medicionIdeal;
+    private final MedicionResultado _medicionIdeal;
 
-    private final medicionAdapter _medidor = new medicion(new medidorExterno());
+    private final MedicionAdapter _medidor = new Medicion(new MedidorExterno());
 
     public ObjetivoTonificar(Socio socio) {
         this._socio = socio;
