@@ -44,8 +44,6 @@ public class Socio {
 
     }
 
-
-
     private void setMedicionInicial() {
         _medicion = new MedicionResultado();
 
@@ -214,20 +212,25 @@ public class Socio {
         String hoy = getDiaHoy();
         // this.getObjetivo().crearRutina(this._diasEntrenamiento);
         boolean diaEntrenamiento = hayDiaEntrenamiento();
+        Rutina rutina = _objetivo.getRutina();
         if (diaEntrenamiento) {
-            System.out.println("Ejercicios del día:");
-            ArrayList<DiaEjercicio> rutina = this.getObjetivo().getRutina().getDiaEjercicios();
-            for (DiaEjercicio ejercicio : rutina) {
-                if (ejercicio.getDia().equals(hoy)) {
-                    for (EjercicioRutina ejercicioRutina : ejercicio.getEjerciciosRutina()) {
-                        System.out.print("* ");
-                        System.out.println(ejercicioRutina.getNombre());
+            ArrayList<DiaEjercicio> diaEjercicios = _objetivo.getRutina().getDiaEjercicios();
+            for (DiaEjercicio diaEjercicio : diaEjercicios) {
+                if (diaEjercicio.getDia().equals(hoy) && diaEjercicio.realizado() == false) {
+                    System.out.println("Ejercicios del día:");
+                    for (EjercicioRutina ejercicioRutina : diaEjercicio.getEjerciciosRutina()) {
+                        System.out.println("* " + ejercicioRutina.getNombre());
+                    }
+                    cargarEjercicios();
+                    diaEjercicio.setRealizado();
+                } else{
+                    if(diaEjercicio.getDia().equals(hoy)) {
+                        System.out.println("Ejercicios del dia realizados.");
                     }
                 }
             }
-            this.cargarEjercicios();
         } else {
-            System.out.println("Tu rutina no tiene ejercicios para hoy");
+            System.out.println("Tu rutina no tiene ejercicios para hoy.");
         }
     }
 

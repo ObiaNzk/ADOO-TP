@@ -15,7 +15,7 @@ import java.util.Scanner;
 
 public class ControllerSocio {
     private ArrayList<Socio> _socios = new ArrayList<Socio>();
-    private static ControllerSocio _controllerSocio = null;
+    private static ControllerSocio _controllerSocio = ControllerSocio.getInstancia();
     private Socio _socioLogueado = null;
     private IAdapterLogin adapterLogin = new AdapterLogin();
 
@@ -61,13 +61,13 @@ public class ControllerSocio {
     }
 
     public void iniciarSesion() {
-        System.out.println();
-        System.out.println("¡Bienvenido al ARNOLD FITNESS CENTER!\nIngrese sus credenciales para iniciar sesión.");
+
+        System.out.println("\n¡Bienvenido al ARNOLD FITNESS CENTER!\nIngrese sus credenciales para iniciar sesión.");
         System.out.println("DNI: ");
         String dniIngresado = scanner.nextLine();
         Socio s = getSocioByDNI(Integer.parseInt(dniIngresado));
 
-        while(s == null){
+        while (s == null) {
             System.out.println("El dni ingreado no fue encontrado. Ingrese su dni: ");
             dniIngresado = scanner.nextLine();
             s = getSocioByDNI(Integer.parseInt(dniIngresado));
@@ -76,16 +76,15 @@ public class ControllerSocio {
         System.out.println("Contraseña: ");
         String pswIngresada = scanner.nextLine();
 
-        while(!pswIngresada.equals(s.getPsw())){
+        while (!pswIngresada.equals(s.getPsw())) {
             System.out.println("Contraseña incorrecta. Ingrese su contraseña: ");
             pswIngresada = scanner.nextLine();
         }
 
-        if(adapterLogin.login(dniIngresado, pswIngresada)){
+        if (adapterLogin.login(dniIngresado, pswIngresada)) {
             _socioLogueado = s;
         }
 
-        menu();
     }
 
     private void registrar() {
@@ -98,49 +97,57 @@ public class ControllerSocio {
     }
 
     public void menu() {
-        if(_socioLogueado.getObjetivo().getRutina() == null){
-            _socioLogueado.elegirDiasEntrenamiento();
-            _socioLogueado.elegirObjetivo();
-        }
 
-        System.out.println();
-        System.out.println("Para continuar, ingrese el número de la opción que corresponda.\n" +
-                "1. Comenzar entrenamiento del día\n" +
-                "2. Modificar objetivo\n" +
-                "3. Modificar días de entrenamiento\n" +
-                "4. Reforzar rutina\n" +
-                "5. Ver progreso\n" +
-                "6. Ver trofeos\n" +
-                "7. Pesar\n" +
-                "8. Salir");
 
-        switch (scanner.nextLine()) {
-            case "1":
-                _socioLogueado.entrenar();
-                break;
-            case "2":
-                _socioLogueado.elegirObjetivo();
-                break;
-            case "3":
+        if(_socioLogueado != null) {
+            if (_socioLogueado.getObjetivo().getRutina() == null) {
                 _socioLogueado.elegirDiasEntrenamiento();
-                break;
-            case "4":
-                _socioLogueado.reforzarRutina();
-                break;
-            case "5":
-                _socioLogueado.getProgeso();
-                break;
-            case "6":
-                _socioLogueado.getTrofeos();
-                break;
-            case "7":
-                // _socioLogueado.setMedicion(this._balanza.medir(_socioLogueado.getAltura(),_socioLogueado.getSexo()));
-                break;
-            case "8":
-                return;
-            default:
-                System.out.println("La opción ingresada es incorrecta");
-                menu();
+                _socioLogueado.elegirObjetivo();
+            }
+
+            System.out.println();
+            System.out.println("Para continuar, ingrese el número de la opción que corresponda.\n" +
+                    "1. Comenzar entrenamiento del día\n" +
+                    "2. Modificar objetivo\n" +
+                    "3. Modificar días de entrenamiento\n" +
+                    "4. Reforzar rutina\n" +
+                    "5. Ver progreso\n" +
+                    "6. Ver trofeos\n" +
+                    "7. Pesar\n" +
+                    "8. Salir");
+
+            switch (scanner.nextLine()) {
+                case "1":
+                    _socioLogueado.entrenar();
+                    menu();
+                case "2":
+                    _socioLogueado.elegirObjetivo();
+                    menu();
+                case "3":
+                    _socioLogueado.elegirDiasEntrenamiento();
+                    menu();
+                case "4":
+                    _socioLogueado.reforzarRutina();
+                    menu();
+                case "5":
+                    _socioLogueado.getProgeso();
+                    menu();
+                case "6":
+                    _socioLogueado.getTrofeos();
+                    menu();
+                case "7":
+                    // _socioLogueado.setMedicion(this._balanza.medir(_socioLogueado.getAltura(),_socioLogueado.getSexo()));
+                    menu();
+                case "8":
+                    _socioLogueado = null;
+                    menu();
+                default:
+                    System.out.println("La opción ingresada es incorrecta");
+                    menu();
+            }
+        } else{
+            _controllerSocio.iniciarSesion();
+            menu();
         }
     }
 }
