@@ -141,6 +141,7 @@ public class ControllerSocio {
             default:
                 System.out.println("La opción ingresada es incorrecta");
                 menu();
+                break;
         }
     }
 }

@@ -148,7 +148,7 @@ public class Socio {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Elija qué días desea seleccionar como días de entrenamiento, separados por coma y sin espacios.\n LU, MA, MI, JU, VI, SA, DO. ");
-        String dias = scanner.nextLine();
+        String dias = scanner.nextLine().toUpperCase();
 
         this.setDiasEntrenamiento(dias.split(","));
 
