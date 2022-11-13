@@ -7,10 +7,16 @@ import java.util.ArrayList;
 public class DiaEjercicio {
     private String _dia;
     private ArrayList<EjercicioRutina> _ejercicios = new ArrayList<EjercicioRutina>();
+    private int _idRutina = -1;
 
     public DiaEjercicio(String dia,ArrayList<EjercicioRutina> ejercicios ){
         this._dia = dia;
         this._ejercicios = ejercicios;
+    }
+
+    public DiaEjercicio(String dia, int idRutina) {
+        this._dia = dia;
+        this._idRutina = idRutina;
     }
 
     public void agregarEjercicio(Ejercicio ejercicio, int series, int repeticiones, double peso){
@@ -25,5 +31,20 @@ public class DiaEjercicio {
 
     public ArrayList<EjercicioRutina> getEjerciciosRutina() {
         return this._ejercicios;
+    }
+
+    public void agregarEjercicio(EjercicioRutina ejercicio){
+        _ejercicios.add(ejercicio);
+    }
+
+    public void setIdRutina(int id){
+        this._idRutina = id;
+    }
+    public int getIdRutina(){
+        return _idRutina;
+    }
+
+    public ArrayList<EjercicioRutina> getEjercicios(){
+        return _ejercicios;
     }
 }

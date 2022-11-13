@@ -1,36 +1,42 @@
-package Clases.objetivo;
+package Clases.Objetivo;
 
 import Clases.DiaEjercicio;
 import Clases.EjercicioRutina;
 import Clases.Rutina;
 import Clases.Socio;
-import Clases.medicion.medicion;
-import Clases.medicion.medicionAdapter;
-import Clases.medicion.medicionResultado;
-import Clases.medicion.medidorExterno;
 import Enums.Exigencia;
 import Enums.TipoMuscular;
 import ListaEjercicios.Ejercicio;
 
 import java.util.ArrayList;
 import java.util.Random;
-import java.util.Scanner;
 
-public class ObjetivoTonificar extends ObjetivoStrategy {
-    // dias :  2 horas hasta 2 horas y 30 minutos
-    private final int _duracionMinima = 120;
-    // ejercicios: aerobico entre <= 4 y ejercitacion muscular fuerte
-    private final int _duracionMaxima = 150;
+import static java.lang.Math.abs;
+
+public class ObjetivoMantener extends ObjetivoStrategy {
+    // dias :  45 min hasta 1 hora y 20 minutos
+    // ejercicios: aerobico entre 2 y 4 y ejercitacion muscular medio o bajo
+
+    private final int _duracionMinima = 45;
+    private final int _duracionMaxima = 80;
 
     private final Socio _socio;
 
-    private final medicionResultado _medicionIdeal;
+    private final int _pesoInicial = 80;
 
-    private final medicionAdapter _medidor = new medicion(new medidorExterno());
+    private int _variacionObjetivo = 4;
 
-    public ObjetivoTonificar(Socio socio) {
+    public ObjetivoMantener(Socio socio) {
         this._socio = socio;
-        this._medicionIdeal  = this._medidor.medir(socio.getAltura(), socio.getSexo());
+        // this._pesoInicial = socio.getMedicion().getPeso();
+    }
+
+    private int getVariacionObjetivo() {
+        return this._variacionObjetivo;
+    }
+
+    private void setvariacionObjetivo(int valor) {
+        this._variacionObjetivo = valor;
     }
 
     public TipoMuscular elegirGrupoMuscular() {
@@ -48,7 +54,9 @@ public class ObjetivoTonificar extends ObjetivoStrategy {
             var exigencia = ejercicio.getExigencia();
             var tipoMuscular = ejercicio.getTipoMuscular();
 
-            if ((nivelAerobico <= 4) && exigencia == Exigencia.ALTO && tipoMuscular == tipo) {
+            if ((nivelAerobico >= 2 && nivelAerobico <= 4) &&
+                    (exigencia == Exigencia.MEDIO || exigencia == Exigencia.BAJO) &&
+                    (tipoMuscular == tipo)) {
                 ejerciciosDisponibles.add(ejercicio);
             }
         }
@@ -56,7 +64,10 @@ public class ObjetivoTonificar extends ObjetivoStrategy {
     }
 
     public Rutina crearRutina(String[] dias) {
+
         var diasEjercicio = new ArrayList<DiaEjercicio>();
+        //El for de debajo, genera la rutina de una semana, deberia hacerlo
+        // 4 veces (para las 4 semanas) pero sino no podríamos testear bien.
         for (String dia : dias) {
 
             var duracionActual = 0;
@@ -70,7 +81,7 @@ public class ObjetivoTonificar extends ObjetivoStrategy {
                     break;
                 }
 
-                var ejercicioRutina = new EjercicioRutina(ejercicio, 2, 12, 4);
+                var ejercicioRutina = new EjercicioRutina(ejercicio, 2, 10, 5);
                 ejerciciosElegidos.add(ejercicioRutina);
                 duracionActual += ejercicio.getDuracion();
             }
@@ -80,35 +91,15 @@ public class ObjetivoTonificar extends ObjetivoStrategy {
         return new Rutina(diasEjercicio);
     }
 
+
     public boolean cumplioObjetivo() {
-        var medicionActual = this._socio.getMedicion();
-
-
-        if ((medicionActual.getmasaMuscular() != this._medicionIdeal.getmasaMuscular())||(medicionActual.getgrasaCorporal() != this._medicionIdeal.getgrasaCorporal())){
+        /*
+        if (abs(this._socio.getMedicion().getPeso() - this._pesoInicial) > this._variacionObjetivo) {
             return false;
         }
-
-
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Felicidades, cumpliste tu objetivo de Tonificar :).");
-
-        while (true) {
-            System.out.println("Si queres cambiar tu objetivo a 'Mantener Figura' escribi 'SI', caso contrario escribi 'NO'.");
-            String cambiarObjetivo = scanner.nextLine();
-
-            switch (cambiarObjetivo) {
-                case "SI":
-                    System.out.println("Cambiando objetivo a 'Mantener Figura.");
-                    this._socio.getObjetivo().cambiarEstrategia(new ObjetivoMantener(this._socio));
-                    return true;
-                case "NO":
-                    System.out.println("Tu objetivo no fue modificado.");
-                    return true;
-                default:
-                    System.out.println("Opción invalida, intente nuevamente");
-            }
-        }
-
+        System.out.println("Felicidades, cumpliste tu objetivo de Mantener tu peso :).");
+        return true;
+        */
+        return false;
     }
-
 }

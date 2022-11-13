@@ -1,4 +1,4 @@
-package Clases.medicion;
+package Clases.Medicion;
 
 import Enums.Sexo;
 

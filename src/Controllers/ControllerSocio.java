@@ -1,9 +1,9 @@
 package Controllers;
 
 import Clases.Socio;
-import Clases.medicion.medicion;
-import Clases.medicion.medicionAdapter;
-import Clases.medicion.medidorExterno;
+import Clases.Medicion.medicion;
+import Clases.Medicion.medicionAdapter;
+import Clases.Medicion.medidorExterno;
 import Enums.Sexo;
 import Login.AdapterLogin;
 import Login.IAdapterLogin;
@@ -11,7 +11,6 @@ import Login.IAdapterLogin;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.Scanner;
 
 public class ControllerSocio {

@@ -1,9 +1,9 @@
-package Clases.objetivo;
+package Clases.Objetivo;
 
 import Clases.*;
-import Clases.medicion.medicion;
-import Clases.medicion.medicionAdapter;
-import Clases.medicion.medidorExterno;
+import Clases.Medicion.medicion;
+import Clases.Medicion.medicionAdapter;
+import Clases.Medicion.medidorExterno;
 import Enums.Sexo;
 import Enums.TipoMuscular;
 import ListaEjercicios.Ejercicio;

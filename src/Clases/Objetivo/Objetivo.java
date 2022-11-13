@@ -1,4 +1,4 @@
-package Clases.objetivo;
+package Clases.Objetivo;
 
 import Clases.DiaEjercicio;
 import Clases.EjercicioRutina;

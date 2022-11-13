@@ -1,4 +1,4 @@
-package Clases.medicion;
+package Clases.Medicion;
 
 public class medicionResultado {
     private int _masaMuscular;

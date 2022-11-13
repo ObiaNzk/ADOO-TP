@@ -1,8 +1,6 @@
-package Clases.objetivo;
+package Clases.Objetivo;
 
 import Clases.Rutina;
-
-import java.util.ArrayList;
 
 public abstract class ObjetivoStrategy {
     abstract public Rutina crearRutina(String[] dias);

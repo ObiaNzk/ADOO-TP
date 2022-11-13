@@ -1,22 +1,19 @@
 package Clases;
 
-import Clases.medicion.medicion;
-import Clases.medicion.medicionAdapter;
-import Clases.medicion.medicionResultado;
-import Clases.medicion.medidorExterno;
-import Clases.objetivo.Objetivo;
-import Clases.objetivo.ObjetivoMantener;
-import Clases.objetivo.ObjetivoPerderPeso;
-import Clases.objetivo.ObjetivoTonificar;
+import Clases.Objetivo.Objetivo;
+import Clases.Objetivo.ObjetivoMantener;
+import Clases.Objetivo.ObjetivoPerderPeso;
+import Clases.Objetivo.ObjetivoTonificar;
+import Clases.Medicion.medicionResultado;
 import Enums.Sexo;
 import Trofeos.Trofeo;
-import Trofeos.TrofeoDedicacion;
+import Trofeos.TrofeoConstancia;
 
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
-import java.util.Scanner;
 import java.util.Calendar;
+import java.util.Scanner;
 
 public class Socio {
     private int _dni;
@@ -29,7 +26,7 @@ public class Socio {
     private String[] _diasEntrenamiento;
     private Objetivo _objetivo;
     private ArrayList<Trofeo> _trofeos = new ArrayList<Trofeo>();
-    private ArrayList<EjercicioRutina> _historialEjercicios = new ArrayList<>();
+    private ArrayList<DiaEjercicio> _historialEjercicios = new ArrayList<>();
 
     private medicionResultado _medicion;
 
@@ -217,10 +214,12 @@ public class Socio {
 
     public void cargarEjercicios() {
         String hoy = getDiaHoy();
-        ArrayList<DiaEjercicio> rutina = _objetivo.getRutina().getDiaEjercicios();
+        Rutina rutina = _objetivo.getRutina();
+        ArrayList<DiaEjercicio> rutinaEjercicios = rutina.getDiaEjercicios();
         Scanner scanner = new Scanner(System.in);
-        for (DiaEjercicio ejercicio : rutina) {
+        for (DiaEjercicio ejercicio : rutinaEjercicios) {
             if (ejercicio.getDia().equals(hoy)) {
+                DiaEjercicio diaActual = new DiaEjercicio(ejercicio.getDia(), rutina.getId());
                 for (EjercicioRutina ejercicioRutina : ejercicio.getEjerciciosRutina()) {
                     ejercicioRutina.instrucciones();
                     System.out.println("Cantidad de series realizadas:");
@@ -231,16 +230,17 @@ public class Socio {
                     String peso = scanner.nextLine();
                     EjercicioRutina ejercicioActual = new EjercicioRutina(ejercicioRutina.getEjercicio(),
                             Integer.parseInt(series), Integer.parseInt(repeticiones), Integer.parseInt(peso));
-                    this._historialEjercicios.add(ejercicioActual);
+                    diaActual.agregarEjercicio(ejercicioActual);
                 }
+                _historialEjercicios.add(diaActual);
             }
         }
         verificarTrofeoConstancia(rutina);
     }
 
-    public void verificarTrofeoConstancia(ArrayList<DiaEjercicio> rutina) {
-        if(TrofeoDedicacion.chequearPremio(rutina, this._historialEjercicios)) {
-            TrofeoDedicacion trofeo = new TrofeoDedicacion();
+    public void verificarTrofeoConstancia(Rutina rutina) {
+        if(TrofeoConstancia.chequearPremio(rutina, _historialEjercicios)) {
+            TrofeoConstancia trofeo = new TrofeoConstancia();
             trofeo.notificadoPor(this);
             _trofeos.add(trofeo);
             System.out.println();
