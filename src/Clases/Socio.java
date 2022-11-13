@@ -147,7 +147,7 @@ public class Socio {
     public void elegirDiasEntrenamiento() {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Elija qué días desea seleccionar como días de entrenamiento, separados por coma y sin espacios.\n LU, MA, MI, JU, VI, SA, DO. ");
+        System.out.println("Elija qué días desea seleccionar como días de entrenamiento, separados por coma.\n LU, MA, MI, JU, VI, SA, DO. ");
         String dias = scanner.nextLine().toUpperCase();
 
         this.setDiasEntrenamiento(dias.split(","));
@@ -155,19 +155,19 @@ public class Socio {
         System.out.println();
         System.out.print("Días elegidos: ");
         for (String dia : this._diasEntrenamiento) {
-            if (dia.equals("LU")) {
+            if (dia.contains("LU")) {
                 System.out.print("Lunes, ");
-            } else if (dia.equals("MA")) {
+            } else if (dia.contains("MA")) {
                 System.out.print("Martes, ");
-            } else if (dia.equals("MI")) {
+            } else if (dia.contains("MI")) {
                 System.out.print("Miércoles, ");
-            } else if (dia.equals("JU")) {
+            } else if (dia.contains("JU")) {
                 System.out.print("Jueves, ");
-            } else if (dia.equals("VI")) {
+            } else if (dia.contains("VI")) {
                 System.out.print("Viernes, ");
-            } else if (dia.equals("SA")) {
+            } else if (dia.contains("SA")) {
                 System.out.print("Sábado, ");
-            } else if (dia.equals("DO")) {
+            } else if (dia.contains("DO")) {
                 System.out.print("Domingo, ");
             }
         }
