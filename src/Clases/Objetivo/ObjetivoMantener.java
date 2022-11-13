@@ -64,31 +64,53 @@ public class ObjetivoMantener extends ObjetivoStrategy {
     }
 
     public Rutina crearRutina(String[] dias) {
+        ArrayList<DiaEjercicio> diasEjercicio = new ArrayList<DiaEjercicio>();
 
-        var diasEjercicio = new ArrayList<DiaEjercicio>();
-        //El for de debajo, genera la rutina de una semana, deberia hacerlo
-        // 4 veces (para las 4 semanas) pero sino no podríamos testear bien.
-        for (String dia : dias) {
+        ArrayList<ArrayList<TipoMuscular>> separacion = separarGruposEnDias(dias);
 
-            var duracionActual = 0;
-            TipoMuscular tipo = elegirGrupoMuscular();
-            ArrayList<Ejercicio> ejerciciosDisponibles = elegirEjerciciosDisponibles(tipo);
+        int i = 0;
+
+        for (ArrayList<TipoMuscular> dia : separacion) {
+            int duracionActual = 0;
             ArrayList<EjercicioRutina> ejerciciosElegidos = new ArrayList<EjercicioRutina>();
+            for (TipoMuscular tipo : dia) {
+                ArrayList<Ejercicio> ejerciciosDisponibles = elegirEjerciciosDisponibles(tipo);
 
-            for (Ejercicio ejercicio : ejerciciosDisponibles) {
-
-                if ((duracionActual + ejercicio.getDuracion()) > _duracionMaxima) {
-                    break;
+                for (Ejercicio ejer : ejerciciosDisponibles) {
+                    if(duracionActual<=_duracionMaxima+ejer.getDuracion()) {
+                        EjercicioRutina ejercicioRutina = new EjercicioRutina(ejer, 2, 15, 8);
+                        ejerciciosElegidos.add(ejercicioRutina);
+                        duracionActual += ejer.getDuracion();
+                    }
                 }
-
-                var ejercicioRutina = new EjercicioRutina(ejercicio, 2, 10, 5);
-                ejerciciosElegidos.add(ejercicioRutina);
-                duracionActual += ejercicio.getDuracion();
             }
-
-            diasEjercicio.add(new DiaEjercicio(dia, ejerciciosElegidos));
+            DiaEjercicio diaEjercicio = new DiaEjercicio(dias[i], ejerciciosElegidos);
+            diasEjercicio.add(diaEjercicio);
+            i++;
+            duracionActual = 0;
         }
         return new Rutina(diasEjercicio);
+    }
+
+    private ArrayList<ArrayList<TipoMuscular>> separarGruposEnDias(String[] dias) {
+        TipoMuscular[] gruposMusculares = TipoMuscular.values();
+        ArrayList<ArrayList<TipoMuscular>> matriz = new ArrayList<>();
+
+        for(int i = 0; i < dias.length; i++){
+            matriz.add(new ArrayList<TipoMuscular>());
+        }
+
+        int i = 0;
+        for(TipoMuscular grupo: gruposMusculares){
+            matriz.get(i).add(grupo);
+            if(i < dias.length-1){
+                i++;
+            } else {
+                i = 0;
+            }
+        }
+
+        return matriz;
     }
 
 
