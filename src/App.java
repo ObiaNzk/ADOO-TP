@@ -6,19 +6,18 @@ import ListaEjercicios.ListaEjercicios;
 
 public class App {
     public static void main(String[] args) throws Exception {
+            instanciarEjerciciosLista();
 
-        instanciarEjerciciosLista();
+            ControllerSocio cs = ControllerSocio.getInstancia();
+            cs.crearSocio("Facundo", "Gironte", 1, "29/07/2001" , Sexo.HOMBRE);
+            cs.crearSocio("Juan", "López",2, "15/06/1989", Sexo.HOMBRE);
 
-        ControllerSocio cs = ControllerSocio.getInstancia();
-        cs.crearSocio("Facundo", "Gironte", 1, "29/07/2001" , Sexo.HOMBRE);
-        cs.crearSocio("Juan", "López",2, "15/06/1989", Sexo.HOMBRE);
+            cs.getSocioByDNI("1").setPsw("contraseña");
+            cs.getSocioByDNI("2").setPsw("contraseña");//comment
 
-        cs.getSocioByDNI(1).setPsw("contraseña");
-        cs.getSocioByDNI(2).setPsw("contraseña");
+            cs.iniciarSesion();
 
-        cs.iniciarSesion();
-
-        System.out.println("Logueado: " + cs.getLogueado().toString());
+            System.out.println("Logueado: " + cs.getLogueado().toString());
     }
 
     public static void instanciarEjerciciosLista(){

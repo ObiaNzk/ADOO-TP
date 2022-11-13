@@ -17,7 +17,7 @@ import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Socio {
-    private int _dni;
+    private String _dni;
     private String _psw;
     private String _nombre;
     private String _apellido;
@@ -103,7 +103,7 @@ public class Socio {
         return "Socio " + _nombre + " " + _apellido + ". DNI número " + _dni + ".";
     }
 
-    public int getDNI() {
+    public String getDNI() {
         return this._dni;
     }
 

@@ -49,10 +49,10 @@ public class ControllerSocio {
         }
     }
 
-    public Socio getSocioByDNI(int dni){
+    public Socio getSocioByDNI(String dni){
         Socio socio = null;
         for(Socio s: _socios){
-            if(s.getDNI() ==  dni){
+            if(s.getDNI().equals(dni)){
                 socio = s;
                 break;
             }
@@ -65,12 +65,12 @@ public class ControllerSocio {
         System.out.println("¡Bienvenido al ARNOLD FITNESS CENTER!\nIngrese sus credenciales para iniciar sesión.");
         System.out.println("DNI: ");
         String dniIngresado = scanner.nextLine();
-        Socio s = getSocioByDNI(Integer.parseInt(dniIngresado));
+        Socio s = getSocioByDNI(dniIngresado);
 
         while(s == null){
             System.out.println("El dni ingreado no fue encontrado. Ingrese su dni: ");
             dniIngresado = scanner.nextLine();
-            s = getSocioByDNI(Integer.parseInt(dniIngresado));
+            s = getSocioByDNI(dniIngresado);
         }
 
         System.out.println("Contraseña: ");
