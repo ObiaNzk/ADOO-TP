@@ -11,9 +11,7 @@ import Trofeos.TrofeoConstancia;
 
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Scanner;
+import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Socio {
@@ -147,31 +145,40 @@ public class Socio {
     public void elegirDiasEntrenamiento() {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Elija qué días desea seleccionar como días de entrenamiento, separados por coma.\n LU, MA, MI, JU, VI, SA, DO. ");
-        String dias = scanner.nextLine().toUpperCase();
+        System.out.println("Elija qué días desea seleccionar como días de entrenamiento, separados por coma." +
+                "\n LUN, MAR, MIE, JUE, VIE, SAB, DOM. ");
+        String diasStr = scanner.nextLine().toUpperCase();
+        String[] diasLeidos = diasStr.split(",");
+        List<String> diasValid = new ArrayList<String>(Arrays.asList());
 
-        this.setDiasEntrenamiento(dias.split(","));
+        validarDias(diasLeidos, diasValid);
+        this.setDiasEntrenamiento(diasValid.toArray(String[]::new));
 
         System.out.println();
         System.out.print("Días elegidos: ");
-        for (String dia : this._diasEntrenamiento) {
-            if (dia.contains("LU")) {
-                System.out.print("Lunes, ");
-            } else if (dia.contains("MA")) {
-                System.out.print("Martes, ");
-            } else if (dia.contains("MI")) {
-                System.out.print("Miércoles, ");
-            } else if (dia.contains("JU")) {
-                System.out.print("Jueves, ");
-            } else if (dia.contains("VI")) {
-                System.out.print("Viernes, ");
-            } else if (dia.contains("SA")) {
-                System.out.print("Sábado, ");
-            } else if (dia.contains("DO")) {
-                System.out.print("Domingo, ");
-            }
+        for(String dia: _diasEntrenamiento){
+            System.out.print(dia + ", ");
         }
         System.out.println();
+    }
+    private void validarDias(String[] diasIn, List<String> diasOut){
+        if(diasIn.length == 0)
+            return;
+        for (int i = 0; i<diasIn.length; i++){
+            if (diasIn[i].contains("LUN")) {
+                diasOut.add("LUN");
+            } else if (diasIn[i].contains("MAR")) {
+                diasOut.add("MAR");
+            } else if (diasIn[i].contains("MIE")) {
+                diasOut.add("MIE");
+            } else if (diasIn[i].contains("JUE")) {
+                diasOut.add("JUE");
+            } else if (diasIn[i].contains("SAB")) {
+                diasOut.add("SAB");
+            } else if (diasIn[i].contains("DOM")) {
+                diasOut.add("DOM");
+            }
+        }
     }
 
     // MOVER getDiaHoy() A CLASE DE UTILS
@@ -180,19 +187,19 @@ public class Socio {
         int dayOfWeek = calendar.get(Calendar.DAY_OF_WEEK);
         String hoy = "";
         if (dayOfWeek == 1) {
-            hoy = "DO";
+            hoy = "DOM";
         } else if (dayOfWeek == 2) {
-            hoy = "LU";
+            hoy = "LUN";
         } else if (dayOfWeek == 3) {
-            hoy = "MA";
+            hoy = "MAR";
         } else if (dayOfWeek == 4) {
-            hoy = "MI";
+            hoy = "MIE";
         } else if (dayOfWeek == 5) {
-            hoy = "JU";
+            hoy = "JUE";
         } else if (dayOfWeek == 6) {
-            hoy = "VI";
+            hoy = "VIE";
         } else if (dayOfWeek == 7) {
-            hoy = "SA";
+            hoy = "SAB";
         }
         return hoy;
     }
@@ -212,13 +219,13 @@ public class Socio {
 
     public void entrenar() {
         String hoy = getDiaHoy();
-        // this.getObjetivo().crearRutina(this._diasEntrenamiento);
+         //this.getObjetivo().crearRutina(this._diasEntrenamiento);
         boolean diaEntrenamiento = hayDiaEntrenamiento();
         if (diaEntrenamiento) {
             System.out.println("Ejercicios del día:");
             ArrayList<DiaEjercicio> rutina = this.getObjetivo().getRutina().getDiaEjercicios();
             for (DiaEjercicio ejercicio : rutina) {
-                if (ejercicio.getDia().equals(hoy)) {
+                if (ejercicio.getDia().contains(hoy)) {
                     for (EjercicioRutina ejercicioRutina : ejercicio.getEjerciciosRutina()) {
                         System.out.print("* ");
                         System.out.println(ejercicioRutina.getNombre());
@@ -237,7 +244,7 @@ public class Socio {
         ArrayList<DiaEjercicio> rutinaEjercicios = rutina.getDiaEjercicios();
         Scanner scanner = new Scanner(System.in);
         for (DiaEjercicio ejercicio : rutinaEjercicios) {
-            if (ejercicio.getDia().equals(hoy)) {
+            if (ejercicio.getDia().contains(hoy)) {
                 DiaEjercicio diaActual = new DiaEjercicio(ejercicio.getDia(), rutina.getId());
                 for (EjercicioRutina ejercicioRutina : ejercicio.getEjerciciosRutina()) {
                     ejercicioRutina.instrucciones();
