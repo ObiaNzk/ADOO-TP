@@ -61,25 +61,10 @@ public class ControllerSocio {
         return socio;
     }
 
-
-    public void bienvenida() {
-        System.out.println("¡Bienvenido al ARNOLD FITNESS CENTER! \n1 para registrarse.\n2 para iniciar sesión.");
-        String option = scanner.nextLine();
-
-        while(!option.equals("1") && !option.equals("2")){
-            System.out.println("Elija una de las opciones disponibles:\n1 para registrarse.\n2 para iniciar sesión.");
-            option = scanner.nextLine();
-        }
-
-        if(option.equals("1")){
-            registrar();
-        } else if (option.equals("2")){
-            iniciarSesion();
-        }
-    }
-
-    private void iniciarSesion() {
-        System.out.println("Ingrese su dni: ");
+    public void iniciarSesion() {
+        System.out.println();
+        System.out.println("¡Bienvenido al ARNOLD FITNESS CENTER!\nIngrese sus credenciales para iniciar sesión.");
+        System.out.println("DNI: ");
         String dniIngresado = scanner.nextLine();
         Socio s = getSocioByDNI(Integer.parseInt(dniIngresado));
 
@@ -89,7 +74,7 @@ public class ControllerSocio {
             s = getSocioByDNI(Integer.parseInt(dniIngresado));
         }
 
-        System.out.println("Ingrese su contraseña: ");
+        System.out.println("Contraseña: ");
         String pswIngresada = scanner.nextLine();
 
         while(!pswIngresada.equals(s.getPsw())){
@@ -150,7 +135,7 @@ public class ControllerSocio {
                 _socioLogueado.getTrofeos();
                 break;
             case "7":
-                _socioLogueado.setMedicion(this._balanza.medir(_socioLogueado.getAltura(),_socioLogueado.getSexo()));
+                // _socioLogueado.setMedicion(this._balanza.medir(_socioLogueado.getAltura(),_socioLogueado.getSexo()));
                 break;
             case "8":
                 return;

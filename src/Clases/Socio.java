@@ -10,6 +10,7 @@ import Clases.objetivo.ObjetivoPerderPeso;
 import Clases.objetivo.ObjetivoTonificar;
 import Enums.Sexo;
 import Trofeos.Trofeo;
+import Trofeos.TrofeoDedicacion;
 
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
@@ -215,21 +216,37 @@ public class Socio {
     }
 
     public void cargarEjercicios() {
-        ArrayList<DiaEjercicio> rutina = this.getObjetivo().getRutina().getDiaEjercicios();
+        String hoy = getDiaHoy();
+        ArrayList<DiaEjercicio> rutina = _objetivo.getRutina().getDiaEjercicios();
         Scanner scanner = new Scanner(System.in);
         for (DiaEjercicio ejercicio : rutina) {
-            for (EjercicioRutina ejercicioRutina : ejercicio.getEjerciciosRutina()) {
-                ejercicioRutina.instrucciones();
-                System.out.println("Cantidad de series realizadas:");
-                String series = scanner.nextLine();
-                System.out.println("Cantidad de repeticiones realizadas:");
-                String repeticiones = scanner.nextLine();
-                System.out.println("Peso levantado:");
-                String peso = scanner.nextLine();
-                EjercicioRutina ejercicioActual = new EjercicioRutina(ejercicioRutina.getEjercicio(),
-                        Integer.parseInt(series), Integer.parseInt(repeticiones), Integer.parseInt(peso));
-                this._historialEjercicios.add(ejercicioActual);
+            if (ejercicio.getDia().equals(hoy)) {
+                for (EjercicioRutina ejercicioRutina : ejercicio.getEjerciciosRutina()) {
+                    ejercicioRutina.instrucciones();
+                    System.out.println("Cantidad de series realizadas:");
+                    String series = scanner.nextLine();
+                    System.out.println("Cantidad de repeticiones realizadas:");
+                    String repeticiones = scanner.nextLine();
+                    System.out.println("Peso levantado:");
+                    String peso = scanner.nextLine();
+                    EjercicioRutina ejercicioActual = new EjercicioRutina(ejercicioRutina.getEjercicio(),
+                            Integer.parseInt(series), Integer.parseInt(repeticiones), Integer.parseInt(peso));
+                    this._historialEjercicios.add(ejercicioActual);
+                }
             }
+        }
+        verificarTrofeoConstancia(rutina);
+    }
+
+    public void verificarTrofeoConstancia(ArrayList<DiaEjercicio> rutina) {
+        if(TrofeoDedicacion.chequearPremio(rutina, this._historialEjercicios)) {
+            TrofeoDedicacion trofeo = new TrofeoDedicacion();
+            trofeo.notificadoPor(this);
+            _trofeos.add(trofeo);
+            System.out.println();
+            System.out.println("¡Felicitaciones!\nGanaste el Trofeo a la Dedicación por cumplir tu rutina a la perfección");
+            System.out.println();
+            this.getTrofeos();
         }
     }
 
