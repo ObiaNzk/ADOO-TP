@@ -8,6 +8,9 @@ import Enums.Sexo;
 import Login.AdapterLogin;
 import Login.IAdapterLogin;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -143,5 +146,15 @@ public class ControllerSocio {
                 menu();
                 break;
         }
+
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        System.out.println("Presione enter para continuar");
+        try{
+            br.readLine();
+        }
+        catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        menu();
     }
 }
