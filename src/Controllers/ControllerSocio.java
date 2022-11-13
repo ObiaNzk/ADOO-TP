@@ -35,7 +35,7 @@ public class ControllerSocio {
         }
     }
 
-    public void crearSocio(String nombre, String apellido, int dni, String fecha, Sexo sexo ){
+    public void crearSocio(String nombre, String apellido, String dni, String fecha, Sexo sexo ){
 
         DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         LocalDate fechaNac = LocalDate.parse(fecha, fmt);

@@ -32,7 +32,7 @@ public class Socio {
     private MedicionResultado _medicion;
 
 
-    public Socio(String nombre, String apellido, int dni, LocalDate fechaNacimiento, Sexo sexo) {
+    public Socio(String nombre, String apellido, String dni, LocalDate fechaNacimiento, Sexo sexo) {
         this._dni = dni;
         this._nombre = nombre;
         this._apellido = apellido;
