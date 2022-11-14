@@ -1,6 +1,5 @@
 package Clases;
 
-import Clases.Medicion.Medicion;
 import Clases.Medicion.MedicionResultado;
 import Clases.Objetivo.Objetivo;
 import Clases.Objetivo.ObjetivoMantener;
@@ -9,6 +8,7 @@ import Clases.Objetivo.ObjetivoTonificar;
 import Enums.Sexo;
 import Trofeos.Trofeo;
 import Trofeos.TrofeoConstancia;
+import Trofeos.TrofeoCreido;
 
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
@@ -91,9 +91,10 @@ public class Socio {
 
     public void setMedicion(MedicionResultado resultado) {
         var nuevaMedicion = new MedicionHistorial(resultado);
-        this._historialMedicion.add(nuevaMedicion);
-        this._medicion = resultado;
+        _historialMedicion.add(nuevaMedicion);
+        _medicion = resultado;
         mostrarMedicion(nuevaMedicion);
+        verificarTrofeoCreido();
     }
 
     public MedicionResultado getMedicion() {
@@ -181,6 +182,7 @@ public class Socio {
     }
 
     // MOVER getDiaHoy() A CLASE DE UTILS
+
     public String getDiaHoy() {
         Calendar calendar = Calendar.getInstance();
         int dayOfWeek = calendar.get(Calendar.DAY_OF_WEEK);
@@ -202,8 +204,8 @@ public class Socio {
         }
         return hoy;
     }
-
     // MOVER hayDiaEntrenamiento() A CLASE DE UTILS
+
     public boolean hayDiaEntrenamiento() {
         // this.getObjetivo().mostrarRutina(dayOfWeek);
         String hoy = getDiaHoy();
@@ -215,7 +217,6 @@ public class Socio {
         }
         return diaEntrenamiento;
     }
-
     public void entrenar() {
         String hoy = getDiaHoy();
         // this.getObjetivo().crearRutina(this._diasEntrenamiento);
@@ -265,18 +266,27 @@ public class Socio {
                 _historialEjercicios.add(diaActual);
             }
         }
-        verificarTrofeoConstancia(rutina);
+        verificarTrofeoConstancia();
     }
 
-    public void verificarTrofeoConstancia(Rutina rutina) {
-        if(TrofeoConstancia.chequearPremio(rutina, _historialEjercicios)) {
+    public void verificarTrofeoConstancia() {
+        if(TrofeoConstancia.chequearPremio(_objetivo.getRutina(), _historialEjercicios)) {
             TrofeoConstancia trofeo = new TrofeoConstancia();
             trofeo.notificadoPor(this);
             _trofeos.add(trofeo);
-            System.out.println();
-            System.out.println("¡Felicitaciones!\nGanaste el Trofeo a la Constancia por cumplir tu rutina a la perfección");
-            System.out.println();
+            System.out.println("\n¡Felicitaciones!\nGanaste el Trofeo a la Constancia por cumplir tu rutina a la perfección\n");
         }
+    }
+
+    private void verificarTrofeoCreido() {
+        if(TrofeoCreido.chequearPremio(this)){
+            TrofeoCreido trofeo = new TrofeoCreido();
+            trofeo.notificadoPor(this);
+            _trofeos.add(trofeo);
+            System.out.println("\n¡Felicitaciones!\nGanaste el Trofeo Creído por pesarte 3 o veces o más en el último mes.\n");
+
+        }
+
     }
 
     public void mostrarMedicion(MedicionHistorial medicion) {
@@ -329,5 +339,9 @@ public class Socio {
 
     public void reforzarRutina() {
         this.getObjetivo().reforzarRutina();
+    }
+
+    public ArrayList<MedicionHistorial> getHistorialMedicion() {
+        return _historialMedicion;
     }
 }

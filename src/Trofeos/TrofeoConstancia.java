@@ -47,6 +47,7 @@ public class TrofeoConstancia extends Trofeo{
     }
 
     public void notificadoPor(Socio socio){
-        this._socio = socio;
+        _socio = socio;
     }
+
 }

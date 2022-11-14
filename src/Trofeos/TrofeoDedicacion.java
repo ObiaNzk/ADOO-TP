@@ -11,8 +11,10 @@ public class TrofeoDedicacion extends Trofeo{
         this.setNombre("Trofeo a la Dedicación");
     }
 
-    public void chequearPremio(){
-
+    public static boolean chequearPremio(){
+        boolean cumplido = true;
+        // manu hace la logica de este premio
+        return cumplido;
     }
 
     public void notificadoPor(Socio socio){

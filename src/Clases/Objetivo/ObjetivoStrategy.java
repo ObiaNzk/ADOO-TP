@@ -7,4 +7,5 @@ public abstract class ObjetivoStrategy {
 
     abstract public boolean cumplioObjetivo();
 
+
 }

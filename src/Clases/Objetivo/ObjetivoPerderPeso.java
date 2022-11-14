@@ -35,12 +35,6 @@ public class ObjetivoPerderPeso extends ObjetivoStrategy {
         return this._pesoIdeal;
     }
 
-    public TipoMuscular elegirGrupoMuscular() {
-        TipoMuscular[] values = TipoMuscular.values();
-        int length = values.length;
-        int randIndex = new Random().nextInt(length);
-        return values[randIndex];
-    }
 
     public ArrayList<Ejercicio> elegirEjerciciosDisponibles(TipoMuscular tipo) {
         ArrayList<Ejercicio> ejercicios = ListaEjercicios.ListaEjercicios.getEjercicios();

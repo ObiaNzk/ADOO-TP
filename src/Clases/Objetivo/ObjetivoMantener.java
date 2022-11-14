@@ -39,13 +39,6 @@ public class ObjetivoMantener extends ObjetivoStrategy {
         this._variacionObjetivo = valor;
     }
 
-    public TipoMuscular elegirGrupoMuscular() {
-        TipoMuscular[] values = TipoMuscular.values();
-        int length = values.length;
-        int randIndex = new Random().nextInt(length);
-        return values[randIndex];
-    }
-
     public ArrayList<Ejercicio> elegirEjerciciosDisponibles(TipoMuscular tipo) {
         ArrayList<Ejercicio> ejercicios = ListaEjercicios.ListaEjercicios.getEjercicios();
         ArrayList<Ejercicio> ejerciciosDisponibles = new ArrayList<Ejercicio>();

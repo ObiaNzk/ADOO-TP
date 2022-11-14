@@ -83,8 +83,6 @@ public class ControllerSocio {
         if (adapterLogin.login(dniIngresado, pswIngresada)) {
             _socioLogueado = s;
         }
-
-        menu();
     }
 
     private void registrar() {
@@ -97,13 +95,14 @@ public class ControllerSocio {
     }
 
     public void menu() {
-        if (_socioLogueado.getObjetivo().getRutina() == null) {
-            _socioLogueado.elegirDiasEntrenamiento();
-            _socioLogueado.elegirObjetivo();
-        }
-        while (true) {
-            System.out.println();
-            System.out.println("Para continuar, ingrese el número de la opción que corresponda.\n" +
+        if(_socioLogueado != null) {
+
+            if (_socioLogueado.getObjetivo().getRutina() == null) {
+                _socioLogueado.elegirDiasEntrenamiento();
+                _socioLogueado.elegirObjetivo();
+            }
+
+            System.out.println("\nPara continuar, ingrese el número de la opción que corresponda.\n" +
                     "1. Comenzar entrenamiento del día\n" +
                     "2. Modificar objetivo\n" +
                     "3. Modificar días de entrenamiento\n" +
@@ -116,30 +115,35 @@ public class ControllerSocio {
             switch (scanner.nextLine()) {
                 case "1":
                     _socioLogueado.entrenar();
-                    break;
+                    menu();
                 case "2":
                     _socioLogueado.elegirObjetivo();
-                    break;
+                    menu();
                 case "3":
                     _socioLogueado.elegirDiasEntrenamiento();
-                    break;
+                    menu();
                 case "4":
                     _socioLogueado.reforzarRutina();
-                    break;
+                    menu();
                 case "5":
                     _socioLogueado.getProgreso();
+                    menu();
                 case "6":
                     _socioLogueado.getTrofeos();
-                    break;
+                    menu();
                 case "7":
                     _socioLogueado.setMedicion(this._balanza.medir(_socioLogueado.getAltura(), _socioLogueado.getSexo()));
-                    break;
+                    menu();
                 case "8":
-                    return;
+                    _socioLogueado = null;
+                    menu();
                 default:
                     System.out.println("La opción ingresada es incorrecta");
                     menu();
             }
+        }else{
+            iniciarSesion();
+            menu();
         }
     }
 }

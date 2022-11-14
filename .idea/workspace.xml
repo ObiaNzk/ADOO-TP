@@ -2,11 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e957b87e-793c-4a37-876f-f9528bece9dd" name="Changes" comment="Facu 26/10/2022 9.50am">
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/App_Ejercicio/Clases/Socio.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/App_Ejercicio/Clases/Socio.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/App_Ejercicio/Controllers/ControllerSocio.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/App_Ejercicio/Controllers/ControllerSocio.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Clases/Objetivo/ObjetivoMantener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Clases/Objetivo/ObjetivoMantener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Clases/Objetivo/ObjetivoPerderPeso.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Clases/Objetivo/ObjetivoPerderPeso.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Clases/Objetivo/ObjetivoStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Clases/Objetivo/ObjetivoStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Clases/Objetivo/ObjetivoTonificar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Clases/Objetivo/ObjetivoTonificar.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Clases/Socio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Clases/Socio.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controllers/ControllerSocio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/ControllerSocio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Trofeos/Trofeo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Trofeos/Trofeo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Trofeos/TrofeoConstancia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Trofeos/TrofeoConstancia.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Trofeos/TrofeoCreido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Trofeos/TrofeoCreido.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Trofeos/TrofeoDedicacion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Trofeos/TrofeoDedicacion.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,12 +55,6 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true"
-  }
-}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="Clases" />
@@ -116,11 +118,6 @@
           <properties class="java.lang.StackOverflowError" package="java.lang" />
           <option name="timeStamp" value="1" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Controllers/ControllerSocio.java</url>
-          <line>117</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>

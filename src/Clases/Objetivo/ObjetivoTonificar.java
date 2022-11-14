@@ -33,13 +33,6 @@ public class ObjetivoTonificar extends ObjetivoStrategy {
         this._medicionIdeal  = this._medidor.medir(socio.getAltura(), socio.getSexo());
     }
 
-    public TipoMuscular elegirGrupoMuscular() {
-        TipoMuscular[] values = TipoMuscular.values();
-        int length = values.length;
-        int randIndex = new Random().nextInt(length);
-        return values[randIndex];
-    }
-
     public ArrayList<Ejercicio> elegirEjerciciosDisponibles(TipoMuscular tipo) {
         ArrayList<Ejercicio> ejercicios = ListaEjercicios.ListaEjercicios.getEjercicios();
         ArrayList<Ejercicio> ejerciciosDisponibles = new ArrayList<Ejercicio>();
