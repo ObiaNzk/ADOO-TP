@@ -16,9 +16,7 @@ public class App {
         cs.getSocioByDNI(1).setPsw("contraseña");
         cs.getSocioByDNI(2).setPsw("contraseña");
 
-        cs.iniciarSesion();
-
-        System.out.println("Logueado: " + cs.getLogueado().toString());
+        cs.menu();
     }
 
     public static void instanciarEjerciciosLista(){

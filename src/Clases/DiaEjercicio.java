@@ -8,6 +8,7 @@ public class DiaEjercicio {
     private String _dia;
     private ArrayList<EjercicioRutina> _ejercicios = new ArrayList<EjercicioRutina>();
     private int _idRutina = -1;
+    private boolean _realizado = false;
 
     public DiaEjercicio(String dia,ArrayList<EjercicioRutina> ejercicios ){
         this._dia = dia;
@@ -46,5 +47,13 @@ public class DiaEjercicio {
 
     public ArrayList<EjercicioRutina> getEjercicios(){
         return _ejercicios;
+    }
+
+    public void setRealizado() {
+        this._realizado = true;
+    }
+
+    public boolean realizado() {
+        return _realizado;
     }
 }
