@@ -1,5 +1,6 @@
 package Clases;
 
+import Clases.Medicion.Medicion;
 import Clases.Medicion.MedicionResultado;
 import Clases.Objetivo.Objetivo;
 import Clases.Objetivo.ObjetivoMantener;
@@ -91,8 +92,10 @@ public class Socio {
     }
 
     public void setMedicion(MedicionResultado resultado) {
-        this._historialMedicion.add(new MedicionHistorial(resultado));
+        var nuevaMedicion = new MedicionHistorial(resultado);
+        this._historialMedicion.add(nuevaMedicion);
         this._medicion = resultado;
+        mostrarMedicion(nuevaMedicion);
     }
 
     public MedicionResultado getMedicion() {
@@ -273,10 +276,20 @@ public class Socio {
         }
     }
 
-    public void getProgeso() {
+    public void mostrarMedicion(MedicionHistorial medicion) {
+        String pattern = "yyyy-dd-MM HH:mm:ss";
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
+        System.out.printf("El dia : %s, tu medicion fue: \n", simpleDateFormat.format( medicion.getFecha()));
+        System.out.printf("Peso: %d \n", medicion.getMedicion().getPeso());
+        System.out.printf("Grasa Corporal: %d \n", medicion.getMedicion().getgrasaCorporal());
+        System.out.printf("Masa Muscular: %d \n", medicion.getMedicion().getmasaMuscular());
+        System.out.println();
+    }
+
+    public void getProgreso() {
         if(_historialEjercicios.size() == 0){
             System.out.println();
-            System.out.println("Para ver tu progreso, debes comenzar a realizar ejercicios.");
+            System.out.println("Aún no realizaste ejercicios.");
             System.out.println();
         } else {
             System.out.println();
@@ -288,18 +301,9 @@ public class Socio {
             }
             System.out.println();
         }
-
-        String pattern = "yyyy-dd-MM HH:mm:ss";
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
-
         for (MedicionHistorial historico: _historialMedicion){
-            System.out.printf("El dia : %s, tu medicion fue: \n", simpleDateFormat.format( historico.getFecha()));
-            System.out.printf("Peso: %d \n", historico.getMedicion().getPeso());
-            System.out.printf("Grasa Corporal: %d \n", historico.getMedicion().getgrasaCorporal());
-            System.out.printf("Masa Muscular: %d \n", historico.getMedicion().getmasaMuscular());
-            System.out.println();
+            mostrarMedicion(historico);
         }
-
     }
 
     public void getTrofeos() {
