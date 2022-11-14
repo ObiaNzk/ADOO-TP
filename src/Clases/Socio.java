@@ -9,7 +9,9 @@ import Enums.Sexo;
 import Trofeos.Trofeo;
 import Trofeos.TrofeoConstancia;
 
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -28,6 +30,8 @@ public class Socio {
     private Objetivo _objetivo;
     private ArrayList<Trofeo> _trofeos = new ArrayList<Trofeo>();
     private ArrayList<DiaEjercicio> _historialEjercicios = new ArrayList<>();
+
+    private ArrayList<MedicionHistorial> _historialMedicion = new ArrayList<MedicionHistorial>();
 
     private MedicionResultado _medicion;
 
@@ -87,6 +91,7 @@ public class Socio {
     }
 
     public void setMedicion(MedicionResultado resultado) {
+        this._historialMedicion.add(new MedicionHistorial(resultado));
         this._medicion = resultado;
     }
 
@@ -283,6 +288,18 @@ public class Socio {
             }
             System.out.println();
         }
+
+        String pattern = "yyyy-dd-MM HH:mm:ss";
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
+
+        for (MedicionHistorial historico: _historialMedicion){
+            System.out.printf("El dia : %s, tu medicion fue: \n", simpleDateFormat.format( historico.getFecha()));
+            System.out.printf("Peso: %d \n", historico.getMedicion().getPeso());
+            System.out.printf("Grasa Corporal: %d \n", historico.getMedicion().getgrasaCorporal());
+            System.out.printf("Masa Muscular: %d \n", historico.getMedicion().getmasaMuscular());
+            System.out.println();
+        }
+
     }
 
     public void getTrofeos() {

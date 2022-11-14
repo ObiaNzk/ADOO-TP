@@ -23,19 +23,18 @@ public class ControllerSocio {
 
     Scanner scanner = new Scanner(System.in);
 
-    private ControllerSocio(){
+    private ControllerSocio() {
     }
 
-    public static ControllerSocio getInstancia(){
-        if(_controllerSocio == null){
+    public static ControllerSocio getInstancia() {
+        if (_controllerSocio == null) {
             return new ControllerSocio();
-        }
-        else {
+        } else {
             return _controllerSocio;
         }
     }
 
-    public void crearSocio(String nombre, String apellido, int dni, String fecha, Sexo sexo ){
+    public void crearSocio(String nombre, String apellido, int dni, String fecha, Sexo sexo) {
 
         DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         LocalDate fechaNac = LocalDate.parse(fecha, fmt);
@@ -43,16 +42,16 @@ public class ControllerSocio {
         _socios.add(new Socio(nombre, apellido, dni, fechaNac, sexo));
     }
 
-    public void printSocios(){
-        for(Socio s: _socios){
+    public void printSocios() {
+        for (Socio s : _socios) {
             System.out.println(s.toString());
         }
     }
 
-    public Socio getSocioByDNI(int dni){
+    public Socio getSocioByDNI(int dni) {
         Socio socio = null;
-        for(Socio s: _socios){
-            if(s.getDNI() ==  dni){
+        for (Socio s : _socios) {
+            if (s.getDNI() == dni) {
                 socio = s;
                 break;
             }
@@ -67,7 +66,7 @@ public class ControllerSocio {
         String dniIngresado = scanner.nextLine();
         Socio s = getSocioByDNI(Integer.parseInt(dniIngresado));
 
-        while(s == null){
+        while (s == null) {
             System.out.println("El dni ingreado no fue encontrado. Ingrese su dni: ");
             dniIngresado = scanner.nextLine();
             s = getSocioByDNI(Integer.parseInt(dniIngresado));
@@ -76,12 +75,12 @@ public class ControllerSocio {
         System.out.println("Contraseña: ");
         String pswIngresada = scanner.nextLine();
 
-        while(!pswIngresada.equals(s.getPsw())){
+        while (!pswIngresada.equals(s.getPsw())) {
             System.out.println("Contraseña incorrecta. Ingrese su contraseña: ");
             pswIngresada = scanner.nextLine();
         }
 
-        if(adapterLogin.login(dniIngresado, pswIngresada)){
+        if (adapterLogin.login(dniIngresado, pswIngresada)) {
             _socioLogueado = s;
         }
 
@@ -98,49 +97,49 @@ public class ControllerSocio {
     }
 
     public void menu() {
-        if(_socioLogueado.getObjetivo().getRutina() == null){
+        if (_socioLogueado.getObjetivo().getRutina() == null) {
             _socioLogueado.elegirDiasEntrenamiento();
             _socioLogueado.elegirObjetivo();
         }
+        while (true) {
+            System.out.println();
+            System.out.println("Para continuar, ingrese el número de la opción que corresponda.\n" +
+                    "1. Comenzar entrenamiento del día\n" +
+                    "2. Modificar objetivo\n" +
+                    "3. Modificar días de entrenamiento\n" +
+                    "4. Reforzar rutina\n" +
+                    "5. Ver progreso\n" +
+                    "6. Ver trofeos\n" +
+                    "7. Pesar\n" +
+                    "8. Salir");
 
-        System.out.println();
-        System.out.println("Para continuar, ingrese el número de la opción que corresponda.\n" +
-                "1. Comenzar entrenamiento del día\n" +
-                "2. Modificar objetivo\n" +
-                "3. Modificar días de entrenamiento\n" +
-                "4. Reforzar rutina\n" +
-                "5. Ver progreso\n" +
-                "6. Ver trofeos\n" +
-                "7. Pesar\n" +
-                "8. Salir");
-
-        switch (scanner.nextLine()) {
-            case "1":
-                _socioLogueado.entrenar();
-                break;
-            case "2":
-                _socioLogueado.elegirObjetivo();
-                break;
-            case "3":
-                _socioLogueado.elegirDiasEntrenamiento();
-                break;
-            case "4":
-                _socioLogueado.reforzarRutina();
-                break;
-            case "5":
-                _socioLogueado.getProgeso();
-                break;
-            case "6":
-                _socioLogueado.getTrofeos();
-                break;
-            case "7":
-                // _socioLogueado.setMedicion(this._balanza.medir(_socioLogueado.getAltura(),_socioLogueado.getSexo()));
-                break;
-            case "8":
-                return;
-            default:
-                System.out.println("La opción ingresada es incorrecta");
-                menu();
+            switch (scanner.nextLine()) {
+                case "1":
+                    _socioLogueado.entrenar();
+                    break;
+                case "2":
+                    _socioLogueado.elegirObjetivo();
+                    break;
+                case "3":
+                    _socioLogueado.elegirDiasEntrenamiento();
+                    break;
+                case "4":
+                    _socioLogueado.reforzarRutina();
+                    break;
+                case "5":
+                    _socioLogueado.getProgeso();
+                case "6":
+                    _socioLogueado.getTrofeos();
+                    break;
+                case "7":
+                    _socioLogueado.setMedicion(this._balanza.medir(_socioLogueado.getAltura(), _socioLogueado.getSexo()));
+                    break;
+                case "8":
+                    return;
+                default:
+                    System.out.println("La opción ingresada es incorrecta");
+                    menu();
+            }
         }
     }
 }
