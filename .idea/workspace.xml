@@ -2,15 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e957b87e-793c-4a37-876f-f9528bece9dd" name="Changes" comment="Facu 26/10/2022 9.50am">
+      <change afterPath="$PROJECT_DIR$/src/Clases/MedicionHistorial.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/App_Ejercicio/Clases/Socio.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/App_Ejercicio/Clases/Socio.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/App_Ejercicio/Controllers/ControllerSocio.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/App_Ejercicio/Controllers/ControllerSocio.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Clases/Socio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Clases/Socio.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controllers/ControllerSocio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/ControllerSocio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Trofeos/Trofeo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Trofeos/Trofeo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Trofeos/TrofeoConstancia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Trofeos/TrofeoConstancia.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Trofeos/TrofeoCreido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Trofeos/TrofeoCreido.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Trofeos/TrofeoDedicacion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Trofeos/TrofeoDedicacion.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,8 +18,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -53,8 +50,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
-      <recent name="Login" />
       <recent name="Clases" />
+      <recent name="Login" />
       <recent name="" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
@@ -113,6 +110,11 @@
           <properties class="java.lang.StackOverflowError" package="java.lang" />
           <option name="timeStamp" value="1" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Controllers/ControllerSocio.java</url>
+          <line>117</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
