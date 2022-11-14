@@ -127,7 +127,7 @@ public class ControllerSocio {
                     _socioLogueado.reforzarRutina();
                     break;
                 case "5":
-                    _socioLogueado.getProgeso();
+                    _socioLogueado.getProgreso();
                 case "6":
                     _socioLogueado.getTrofeos();
                     break;
