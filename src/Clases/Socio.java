@@ -1,5 +1,6 @@
 package Clases;
 
+import Clases.Medicion.Medicion;
 import Clases.Medicion.MedicionResultado;
 import Clases.Objetivo.Objetivo;
 import Clases.Objetivo.ObjetivoMantener;
@@ -9,7 +10,9 @@ import Enums.Sexo;
 import Trofeos.Trofeo;
 import Trofeos.TrofeoConstancia;
 
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -28,6 +31,8 @@ public class Socio {
     private Objetivo _objetivo;
     private ArrayList<Trofeo> _trofeos = new ArrayList<Trofeo>();
     private ArrayList<DiaEjercicio> _historialEjercicios = new ArrayList<>();
+
+    private ArrayList<MedicionHistorial> _historialMedicion = new ArrayList<MedicionHistorial>();
 
     private MedicionResultado _medicion;
 
@@ -85,7 +90,10 @@ public class Socio {
     }
 
     public void setMedicion(MedicionResultado resultado) {
+        var nuevaMedicion = new MedicionHistorial(resultado);
+        this._historialMedicion.add(nuevaMedicion);
         this._medicion = resultado;
+        mostrarMedicion(nuevaMedicion);
     }
 
     public MedicionResultado getMedicion() {
@@ -271,10 +279,20 @@ public class Socio {
         }
     }
 
-    public void getProgeso() {
+    public void mostrarMedicion(MedicionHistorial medicion) {
+        String pattern = "yyyy-dd-MM HH:mm:ss";
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
+        System.out.printf("El dia : %s, tu medicion fue: \n", simpleDateFormat.format( medicion.getFecha()));
+        System.out.printf("Peso: %d \n", medicion.getMedicion().getPeso());
+        System.out.printf("Grasa Corporal: %d \n", medicion.getMedicion().getgrasaCorporal());
+        System.out.printf("Masa Muscular: %d \n", medicion.getMedicion().getmasaMuscular());
+        System.out.println();
+    }
+
+    public void getProgreso() {
         if(_historialEjercicios.size() == 0){
             System.out.println();
-            System.out.println("Para ver tu progreso, debes comenzar a realizar ejercicios.");
+            System.out.println("Aún no realizaste ejercicios.");
             System.out.println();
         } else {
             System.out.println();
@@ -285,6 +303,9 @@ public class Socio {
                 }
             }
             System.out.println();
+        }
+        for (MedicionHistorial historico: _historialMedicion){
+            mostrarMedicion(historico);
         }
     }
 

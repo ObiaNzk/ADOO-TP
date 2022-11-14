@@ -15,7 +15,7 @@ import java.util.Scanner;
 
 public class ControllerSocio {
     private ArrayList<Socio> _socios = new ArrayList<Socio>();
-    private static ControllerSocio _controllerSocio = ControllerSocio.getInstancia();
+    private static ControllerSocio _controllerSocio = null;
     private Socio _socioLogueado = null;
     private IAdapterLogin adapterLogin = new AdapterLogin();
 
@@ -23,19 +23,18 @@ public class ControllerSocio {
 
     Scanner scanner = new Scanner(System.in);
 
-    private ControllerSocio(){
+    private ControllerSocio() {
     }
 
-    public static ControllerSocio getInstancia(){
-        if(_controllerSocio == null){
+    public static ControllerSocio getInstancia() {
+        if (_controllerSocio == null) {
             return new ControllerSocio();
-        }
-        else {
+        } else {
             return _controllerSocio;
         }
     }
 
-    public void crearSocio(String nombre, String apellido, int dni, String fecha, Sexo sexo ){
+    public void crearSocio(String nombre, String apellido, int dni, String fecha, Sexo sexo) {
 
         DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         LocalDate fechaNac = LocalDate.parse(fecha, fmt);
@@ -43,16 +42,16 @@ public class ControllerSocio {
         _socios.add(new Socio(nombre, apellido, dni, fechaNac, sexo));
     }
 
-    public void printSocios(){
-        for(Socio s: _socios){
+    public void printSocios() {
+        for (Socio s : _socios) {
             System.out.println(s.toString());
         }
     }
 
-    public Socio getSocioByDNI(int dni){
+    public Socio getSocioByDNI(int dni) {
         Socio socio = null;
-        for(Socio s: _socios){
-            if(s.getDNI() ==  dni){
+        for (Socio s : _socios) {
+            if (s.getDNI() == dni) {
                 socio = s;
                 break;
             }
@@ -61,8 +60,8 @@ public class ControllerSocio {
     }
 
     public void iniciarSesion() {
-
-        System.out.println("\n¡Bienvenido al ARNOLD FITNESS CENTER!\nIngrese sus credenciales para iniciar sesión.");
+        System.out.println();
+        System.out.println("¡Bienvenido al ARNOLD FITNESS CENTER!\nIngrese sus credenciales para iniciar sesión.");
         System.out.println("DNI: ");
         String dniIngresado = scanner.nextLine();
         Socio s = getSocioByDNI(Integer.parseInt(dniIngresado));
@@ -85,6 +84,7 @@ public class ControllerSocio {
             _socioLogueado = s;
         }
 
+        menu();
     }
 
     private void registrar() {
@@ -97,14 +97,11 @@ public class ControllerSocio {
     }
 
     public void menu() {
-
-
-        if(_socioLogueado != null) {
-            if (_socioLogueado.getObjetivo().getRutina() == null) {
-                _socioLogueado.elegirDiasEntrenamiento();
-                _socioLogueado.elegirObjetivo();
-            }
-
+        if (_socioLogueado.getObjetivo().getRutina() == null) {
+            _socioLogueado.elegirDiasEntrenamiento();
+            _socioLogueado.elegirObjetivo();
+        }
+        while (true) {
             System.out.println();
             System.out.println("Para continuar, ingrese el número de la opción que corresponda.\n" +
                     "1. Comenzar entrenamiento del día\n" +
@@ -119,35 +116,30 @@ public class ControllerSocio {
             switch (scanner.nextLine()) {
                 case "1":
                     _socioLogueado.entrenar();
-                    menu();
+                    break;
                 case "2":
                     _socioLogueado.elegirObjetivo();
-                    menu();
+                    break;
                 case "3":
                     _socioLogueado.elegirDiasEntrenamiento();
-                    menu();
+                    break;
                 case "4":
                     _socioLogueado.reforzarRutina();
-                    menu();
+                    break;
                 case "5":
-                    _socioLogueado.getProgeso();
-                    menu();
+                    _socioLogueado.getProgreso();
                 case "6":
                     _socioLogueado.getTrofeos();
-                    menu();
+                    break;
                 case "7":
-                    // _socioLogueado.setMedicion(this._balanza.medir(_socioLogueado.getAltura(),_socioLogueado.getSexo()));
-                    menu();
+                    _socioLogueado.setMedicion(this._balanza.medir(_socioLogueado.getAltura(), _socioLogueado.getSexo()));
+                    break;
                 case "8":
-                    _socioLogueado = null;
-                    menu();
+                    return;
                 default:
                     System.out.println("La opción ingresada es incorrecta");
                     menu();
             }
-        } else{
-            _controllerSocio.iniciarSesion();
-            menu();
         }
     }
 }
