@@ -77,14 +77,17 @@ public class Socio {
             System.out.println("Nuevo objetivo: Bajar de peso");
             System.out.println();
             _objetivo.cambiarEstrategia(new ObjetivoPerderPeso(this));
+            _objetivo.crearRutina(this._diasEntrenamiento);
         } else if (objetivo.equals("2")) {
             System.out.println("Nuevo objetivo: Tonificar cuerpo");
             System.out.println();
             _objetivo.cambiarEstrategia(new ObjetivoTonificar(this));
+            _objetivo.crearRutina(this._diasEntrenamiento);
         } else if (objetivo.equals("3")) {
             System.out.println("Nuevo objetivo: Mantener la figura");
             System.out.println();
             _objetivo.cambiarEstrategia(new ObjetivoMantener(this));
+            _objetivo.crearRutina(this._diasEntrenamiento);
         } else {
             System.out.println("Opcion incorrecta.");
         }
@@ -183,7 +186,6 @@ public class Socio {
         System.out.println();
     }
 
-    // MOVER getDiaHoy() A CLASE DE UTILS
 
     public String getDiaHoy() {
         Calendar calendar = Calendar.getInstance();
@@ -221,11 +223,10 @@ public class Socio {
     }
     public void entrenar() {
         String hoy = getDiaHoy();
-        // this.getObjetivo().crearRutina(this._diasEntrenamiento);
         boolean diaEntrenamiento = hayDiaEntrenamiento();
         Rutina rutina = _objetivo.getRutina();
         if (diaEntrenamiento) {
-            ArrayList<DiaEjercicio> diaEjercicios = _objetivo.getRutina().getDiaEjercicios();
+            ArrayList<DiaEjercicio> diaEjercicios = rutina.getDiaEjercicios();
             for (DiaEjercicio diaEjercicio : diaEjercicios) {
                 if (diaEjercicio.getDia().equals(hoy) && diaEjercicio.realizado() == false) {
                     System.out.println("Ejercicios del día:");

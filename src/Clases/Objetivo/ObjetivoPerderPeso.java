@@ -60,7 +60,7 @@ public class ObjetivoPerderPeso extends ObjetivoStrategy {
 
                 for (Ejercicio ejer : ejerciciosDisponibles) {
                     if(duracionActual<=_duracionMaxima+ejer.getDuracion()) {
-                        EjercicioRutina ejercicioRutina = new EjercicioRutina(ejer, 2, 15, 8);
+                        EjercicioRutina ejercicioRutina = new EjercicioRutina(ejer, 2, 25, 8);
                         ejerciciosElegidos.add(ejercicioRutina);
                         duracionActual += ejer.getDuracion();
                     }
