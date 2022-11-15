@@ -8,14 +8,6 @@ public abstract class Trofeo {
     private Socio _socio;
     private String _nombre;
 
-    public void notificadoPor(Socio socio){
-
-    }
-
-    public static boolean chequearPremio(){
-        return false;
-    };
-
     public void setNombre(String nombre){
         this._nombre = nombre;
     }

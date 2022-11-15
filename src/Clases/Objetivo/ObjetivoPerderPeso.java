@@ -25,14 +25,10 @@ public class ObjetivoPerderPeso extends ObjetivoStrategy {
 
 
     public ObjetivoPerderPeso(Socio socio){
-        this._socio = socio;
-    }
-
-    public int calcularPesoIdeal(int peso, double altura, Sexo sexo) {
-        var pesoIdeal =  this._balanza.medir(altura, sexo);
+        var pesoIdeal =  this._balanza.medir(socio.getAltura(), socio.getSexo());
 
         this._pesoIdeal = pesoIdeal.getPeso();
-        return this._pesoIdeal;
+        this._socio = socio;
     }
 
 

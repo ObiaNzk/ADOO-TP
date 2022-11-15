@@ -136,7 +136,7 @@ public class ControllerSocio {
                     menu();
                 case "8":
                     _socioLogueado = null;
-                    menu();
+                    return;
                 default:
                     System.out.println("La opción ingresada es incorrecta");
                     menu();
