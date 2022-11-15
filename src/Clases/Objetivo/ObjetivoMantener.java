@@ -110,6 +110,7 @@ public class ObjetivoMantener extends ObjetivoStrategy {
     public boolean cumplioObjetivo() {
 
         if (abs(this._socio.getMedicion().getPeso() - this._pesoInicial) > this._variacionObjetivo) {
+            System.out.println(this._pesoInicial);
             return false;
         } else {
             System.out.println("Felicidades, cumpliste tu objetivo de Mantener tu peso :).");

@@ -8,7 +8,7 @@ public class MedidorExterno implements MedicionAdapter {
         var resultado = new MedicionResultado();
         resultado.setGrasaCorporal(8);
         resultado.setMasaMuscular(20);
-        resultado.setPeso(300);
+        resultado.setPeso(80);
         return resultado;
     }
 }

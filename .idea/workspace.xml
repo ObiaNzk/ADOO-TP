@@ -3,6 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="e957b87e-793c-4a37-876f-f9528bece9dd" name="Changes" comment="Facu 26/10/2022 9.50am">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/App_Ejercicio/Clases/Socio.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/App_Ejercicio/Clases/Socio.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Clases/Medicion/MedidorExterno.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Clases/Medicion/MedidorExterno.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Clases/Objetivo/ObjetivoMantener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Clases/Objetivo/ObjetivoMantener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Clases/Socio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Clases/Socio.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

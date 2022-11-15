@@ -51,16 +51,9 @@ public class Socio {
 
     private void setMedicionInicial() {
         _medicion = new MedicionResultado();
-
-        _medicion.setPeso(ThreadLocalRandom
-                .current()
-                .nextInt(50,100));
-        _medicion.setGrasaCorporal(ThreadLocalRandom
-                .current()
-                .nextInt(8,20));
-        _medicion.setMasaMuscular(ThreadLocalRandom
-                .current()
-                .nextInt(35,45));
+        _medicion.setPeso(80);
+        _medicion.setGrasaCorporal(8);
+        _medicion.setMasaMuscular(20);
     }
 
     public Sexo getSexo() {
@@ -181,6 +174,9 @@ public class Socio {
             } else if (dia.equals("DO")) {
                 System.out.print("Domingo, ");
             }
+        }
+        if(_objetivo.getRutina() != null) {
+            _objetivo.crearRutina(this._diasEntrenamiento);
         }
         System.out.println();
     }
