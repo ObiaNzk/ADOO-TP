@@ -9,6 +9,7 @@ import Enums.Sexo;
 import Trofeos.Trofeo;
 import Trofeos.TrofeoConstancia;
 import Trofeos.TrofeoCreido;
+import Trofeos.TrofeoDedicacion;
 
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
@@ -20,13 +21,13 @@ import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Socio {
-    private int _dni;
+    private final int _dni;
     private String _psw;
-    private String _nombre;
-    private String _apellido;
-    private LocalDate _fechaNacimiento;
-    private Sexo _sexo;
-    private Double _altura = 1.75;
+    private final String _nombre;
+    private final String _apellido;
+    private final LocalDate _fechaNacimiento;
+    private final Sexo _sexo;
+    private final Double _altura = 1.75;
     private String[] _diasEntrenamiento;
     private Objetivo _objetivo;
     private ArrayList<Trofeo> _trofeos = new ArrayList<Trofeo>();
@@ -94,7 +95,8 @@ public class Socio {
         _historialMedicion.add(nuevaMedicion);
         _medicion = resultado;
         mostrarMedicion(nuevaMedicion);
-        verificarTrofeoCreido();
+        TrofeoCreido.chequearPremio(this);
+        TrofeoDedicacion.chequearPremio(this);
     }
 
     public MedicionResultado getMedicion() {
@@ -266,27 +268,7 @@ public class Socio {
                 _historialEjercicios.add(diaActual);
             }
         }
-        verificarTrofeoConstancia();
-    }
-
-    public void verificarTrofeoConstancia() {
-        if(TrofeoConstancia.chequearPremio(_objetivo.getRutina(), _historialEjercicios)) {
-            TrofeoConstancia trofeo = new TrofeoConstancia();
-            trofeo.notificadoPor(this);
-            _trofeos.add(trofeo);
-            System.out.println("\n¡Felicitaciones!\nGanaste el Trofeo a la Constancia por cumplir tu rutina a la perfección\n");
-        }
-    }
-
-    private void verificarTrofeoCreido() {
-        if(TrofeoCreido.chequearPremio(this)){
-            TrofeoCreido trofeo = new TrofeoCreido();
-            trofeo.notificadoPor(this);
-            _trofeos.add(trofeo);
-            System.out.println("\n¡Felicitaciones!\nGanaste el Trofeo Creído por pesarte 3 o veces o más en el último mes.\n");
-
-        }
-
+        TrofeoConstancia.chequearPremio(this);
     }
 
     public void mostrarMedicion(MedicionHistorial medicion) {
@@ -297,6 +279,14 @@ public class Socio {
         System.out.printf("Grasa Corporal: %d \n", medicion.getMedicion().getgrasaCorporal());
         System.out.printf("Masa Muscular: %d \n", medicion.getMedicion().getmasaMuscular());
         System.out.println();
+    }
+
+    public ArrayList<DiaEjercicio> getHistorialEjercicios() {
+        return this._historialEjercicios;
+    }
+
+    public Rutina getRutina(){
+       return this.getObjetivo().getRutina();
     }
 
     public void getProgreso() {
@@ -343,5 +333,12 @@ public class Socio {
 
     public ArrayList<MedicionHistorial> getHistorialMedicion() {
         return _historialMedicion;
+    }
+
+    public void recibirTrofeo(Trofeo trofeo){
+        System.out.println();
+        System.out.printf("¡Felicitaciones!\nGanaste el trofeo: %s.", trofeo.getNombre());
+        System.out.println();
+        this._trofeos.add(trofeo);
     }
 }

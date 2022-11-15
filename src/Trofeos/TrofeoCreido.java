@@ -8,6 +8,7 @@ import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.time.temporal.Temporal;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 
 public class TrofeoCreido extends Trofeo{
@@ -19,31 +20,24 @@ public class TrofeoCreido extends Trofeo{
     }
 
 
-    public static boolean chequearPremio(Socio socio){
-        boolean cumplido = true;
-        ArrayList<MedicionHistorial> historialMediciones = socio.getHistorialMedicion();
+    public static void chequearPremio(Socio socio){
+        var historialMediciones = socio.getHistorialMedicion();
+        var contadorMediciones = 0;
+        var mesActual = Calendar.getInstance().get(Calendar.MONTH);
 
-        int contadorMediciones = 0;
 
-        for(MedicionHistorial medicion:historialMediciones){
-            Date fecha = medicion.getFecha();
-            int dias = Math.toIntExact(ChronoUnit.DAYS.between((Temporal) fecha, LocalDate.now()));
-            System.out.println(dias);
-            if(dias <= 31){
+        for(MedicionHistorial medicion: historialMediciones) {
+            var cal = Calendar.getInstance();
+            cal.setTime(medicion.getFecha());
+            var mesMedicion = cal.get(Calendar.MONTH);
+            if (mesActual == mesMedicion){
                 contadorMediciones++;
             }
-
         }
 
-        if(contadorMediciones < 3){
-            cumplido = false;
+        if (contadorMediciones >= 3){
+            socio.recibirTrofeo(new TrofeoCreido());
         }
 
-
-        return cumplido;
-    }
-
-    public void notificadoPor(Socio socio){
-        _socio = socio;
     }
 }
