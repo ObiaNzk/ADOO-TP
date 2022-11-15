@@ -343,7 +343,18 @@ public class Socio {
         return _historialMedicion;
     }
 
-    public void recibirTrofeo(Trofeo trofeo){
-        this._trofeos.add(trofeo);
+    public boolean recibirTrofeo(Trofeo trofeo){
+        if (this._trofeos.size() == 0){
+            this._trofeos.add(trofeo);
+            return true;
+        }
+
+        for (Trofeo t: this._trofeos){
+            if (!t.getNombre().equals(trofeo.getNombre())){
+                this._trofeos.add(trofeo);
+                return true;
+            }
+        }
+        return false;
     }
 }

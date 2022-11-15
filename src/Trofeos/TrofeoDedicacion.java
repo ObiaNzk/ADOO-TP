@@ -16,8 +16,10 @@ public class TrofeoDedicacion extends Trofeo {
     public static void chequearPremio(Socio socio) {
         if (socio.cumplioObjetivo()) {
             var trofeo = new TrofeoDedicacion();
-            socio.recibirTrofeo(trofeo);
-            new Notificador().enviar(MessageFormat.format("¡Felicitaciones!\nGanaste el {0}.", trofeo.getNombre()));
+            var recibio = socio.recibirTrofeo(trofeo);
+            if (recibio){
+                new Notificador().enviar(MessageFormat.format("¡Felicitaciones!\nGanaste el {0}.", trofeo.getNombre()));
+            }
         }
     }
 }

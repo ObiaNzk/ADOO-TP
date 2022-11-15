@@ -38,8 +38,10 @@ public class TrofeoCreido extends Trofeo {
 
         if (contadorMediciones >= 3) {
             var trofeo = new TrofeoCreido();
-            socio.recibirTrofeo(trofeo);
-            new Notificador().enviar(MessageFormat.format("¡Felicitaciones!\nGanaste el {0}.", trofeo.getNombre()));
+            var recibio = socio.recibirTrofeo(trofeo);
+            if (recibio){
+                new Notificador().enviar(MessageFormat.format("¡Felicitaciones!\nGanaste el {0}.", trofeo.getNombre()));
+            }
         }
 
     }

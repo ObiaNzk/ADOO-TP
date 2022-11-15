@@ -2,19 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e957b87e-793c-4a37-876f-f9528bece9dd" name="Changes" comment="Facu 26/10/2022 9.50am">
-      <change afterPath="$PROJECT_DIR$/src/tests/ControllerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests/NotificacionTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests/TrofeoTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App_Ejercicio.iml" beforeDir="false" afterPath="$PROJECT_DIR$/App_Ejercicio.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/App_Ejercicio/Clases/Socio.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/App_Ejercicio/Clases/Socio.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/App_Ejercicio/Controllers/ControllerSocio.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/App_Ejercicio/Controllers/ControllerSocio.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/App_Ejercicio/Trofeos/TrofeoConstancia.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/App_Ejercicio/Trofeos/TrofeoConstancia.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/App_Ejercicio/Trofeos/TrofeoCreido.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/App_Ejercicio/Trofeos/TrofeoCreido.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/App_Ejercicio/Trofeos/TrofeoDedicacion.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/App_Ejercicio/Trofeos/TrofeoDedicacion.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Clases/Socio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Clases/Socio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/ControllerSocio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/ControllerSocio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Trofeos/TrofeoConstancia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Trofeos/TrofeoConstancia.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Trofeos/TrofeoCreido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Trofeos/TrofeoCreido.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Trofeos/TrofeoDedicacion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Trofeos/TrofeoDedicacion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests/NotificacionTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests/TrofeoTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,14 +53,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="Clases" />
@@ -73,7 +71,7 @@
       <recent name="C:\Users\manu\Desktop\TP\ADOO-TP\src\Clases" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ControllerTest.CrearSocio_FechaIncorrecta">
+  <component name="RunManager" selected="Application.SDK 16">
     <configuration name="SDK 16" type="Application" factoryName="Application">
       <option name="ALTERNATIVE_JRE_PATH" value="17" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -220,9 +218,9 @@
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Trofeos/TrofeoDedicacion.java</url>
-          <line>16</line>
-          <option name="timeStamp" value="8" />
+          <url>file://$PROJECT_DIR$/src/Clases/Socio.java</url>
+          <line>351</line>
+          <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
