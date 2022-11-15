@@ -40,7 +40,6 @@ public class TrofeoCreido extends Trofeo {
             var trofeo = new TrofeoCreido();
             socio.recibirTrofeo(trofeo);
             new Notificador().enviar(MessageFormat.format("¡Felicitaciones!\nGanaste el {0}.", trofeo.getNombre()));
-
         }
 
     }

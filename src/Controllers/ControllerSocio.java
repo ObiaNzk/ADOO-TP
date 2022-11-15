@@ -26,6 +26,10 @@ public class ControllerSocio {
     private ControllerSocio() {
     }
 
+    public ArrayList<Socio> getSocios(){
+        return this._socios;
+    }
+
     public static ControllerSocio getInstancia() {
         if (_controllerSocio == null) {
             return new ControllerSocio();
@@ -129,7 +133,7 @@ public class ControllerSocio {
                     _socioLogueado.getProgreso();
                     menu();
                 case "6":
-                    _socioLogueado.getTrofeos();
+                    _socioLogueado.mostrarTrofeos();
                     menu();
                 case "7":
                     _socioLogueado.setMedicion(this._balanza.medir(_socioLogueado.getAltura(), _socioLogueado.getSexo()));

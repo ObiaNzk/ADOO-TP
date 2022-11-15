@@ -13,7 +13,6 @@ import Trofeos.TrofeoDedicacion;
 
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -310,7 +309,11 @@ public class Socio {
         }
     }
 
-    public void getTrofeos() {
+    public ArrayList<Trofeo> getTrofeos(){
+        return this._trofeos;
+    }
+
+    public void mostrarTrofeos() {
         if (this._trofeos.size() > 0) {
             System.out.println();
             System.out.println("Obtuviste los siguientes trofeos: ");
@@ -325,6 +328,10 @@ public class Socio {
     }
 
     public boolean cumplioObjetivo() {
+        if (this.getObjetivo().getEstrategia() == null){
+            return false;
+        }
+
         return this.getObjetivo().getEstrategia().cumplioObjetivo();
     }
 
