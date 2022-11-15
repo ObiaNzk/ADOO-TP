@@ -5,11 +5,12 @@ import Clases.EjercicioRutina;
 import Clases.Rutina;
 import Clases.Socio;
 import NotificacionTrofeo.Notificador;
+import NotificacionTrofeo.PushAdapter;
 
+import java.text.MessageFormat;
 import java.util.ArrayList;
 
 public class TrofeoConstancia extends Trofeo {
-    private Notificador _notificador;
     private Socio _socio;
 
     public TrofeoConstancia() {
@@ -42,12 +43,10 @@ public class TrofeoConstancia extends Trofeo {
             }
         }
 
+        var trofeo = new TrofeoConstancia();
+        socio.recibirTrofeo(trofeo);
+        new Notificador().enviar(MessageFormat.format("¡Felicitaciones!\nGanaste el {0}.", trofeo.getNombre()));
 
-        socio.recibirTrofeo(new TrofeoConstancia());
-    }
-
-    public void notificadoPor(Socio socio) {
-        _socio = socio;
     }
 
 }

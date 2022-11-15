@@ -1,7 +1,8 @@
 package NotificacionTrofeo;
 
-public class Notificador {
-    public void enviar(Notificacion notificacion){
-
-    }
+public class Notificador implements PushAdapter {
+    private static PushAdapter _notificador = Firebase.getInstance();
+   public void enviar(String mensaje){
+        _notificador.enviar(mensaje);
+   }
 }

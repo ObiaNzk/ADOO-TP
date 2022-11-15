@@ -1,12 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e957b87e-793c-4a37-876f-f9528bece9dd" name="Changes" comment="">
+    <list default="true" id="e957b87e-793c-4a37-876f-f9528bece9dd" name="Changes" comment="Facu 26/10/2022 9.50am">
+      <change afterPath="$PROJECT_DIR$/src/NotificacionTrofeo/Firebase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/NotificacionTrofeo/PushAdapter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/App_Ejercicio/Clases/Socio.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/App_Ejercicio/Clases/Socio.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Clases/Objetivo/ObjetivoPerderPeso.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Clases/Objetivo/ObjetivoPerderPeso.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Clases/Objetivo/ObjetivoTonificar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Clases/Objetivo/ObjetivoTonificar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/App_Ejercicio/NotificacionTrofeo/Notificacion.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/App_Ejercicio/NotificacionTrofeo/Notificacion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/App_Ejercicio/NotificacionTrofeo/Notificador.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/App_Ejercicio/NotificacionTrofeo/Notificador.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/App_Ejercicio/Trofeos/Trofeo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/App_Ejercicio/Trofeos/Trofeo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/App_Ejercicio/Trofeos/TrofeoConstancia.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/App_Ejercicio/Trofeos/TrofeoConstancia.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/App_Ejercicio/Trofeos/TrofeoCreido.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/App_Ejercicio/Trofeos/TrofeoCreido.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/App_Ejercicio/Trofeos/TrofeoDedicacion.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/App_Ejercicio/Trofeos/TrofeoDedicacion.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Clases/Socio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Clases/Socio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NotificacionTrofeo/Notificacion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NotificacionTrofeo/Notificacion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NotificacionTrofeo/Notificador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NotificacionTrofeo/Notificador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Trofeos/Trofeo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Trofeos/Trofeo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Trofeos/TrofeoConstancia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Trofeos/TrofeoConstancia.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Trofeos/TrofeoCreido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Trofeos/TrofeoCreido.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Trofeos/TrofeoDedicacion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Trofeos/TrofeoDedicacion.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,6 +121,11 @@
           <properties class="java.lang.StackOverflowError" package="java.lang" />
           <option name="timeStamp" value="1" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Trofeos/TrofeoDedicacion.java</url>
+          <line>18</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>

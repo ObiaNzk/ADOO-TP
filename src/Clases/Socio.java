@@ -337,9 +337,6 @@ public class Socio {
     }
 
     public void recibirTrofeo(Trofeo trofeo){
-        System.out.println();
-        System.out.printf("¡Felicitaciones!\nGanaste el trofeo: %s.", trofeo.getNombre());
-        System.out.println();
         this._trofeos.add(trofeo);
     }
 }
