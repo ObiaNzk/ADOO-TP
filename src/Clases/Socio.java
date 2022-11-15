@@ -350,11 +350,12 @@ public class Socio {
         }
 
         for (Trofeo t: this._trofeos){
-            if (!t.getNombre().equals(trofeo.getNombre())){
-                this._trofeos.add(trofeo);
-                return true;
+            if (t.getNombre().equals(trofeo.getNombre())){
+                return false;
             }
         }
-        return false;
+
+        this._trofeos.add(trofeo);
+        return true;
     }
 }
