@@ -82,8 +82,8 @@ public class App {
 
             switch (scanner.nextLine()) {
                 case "1":
-                    if(cs.hayDiaEntrenamiento(_socioLogueado)){
-                        ArrayList<EjercicioRutina> ejercicios = cs.getEjerciciosDelDia(_socioLogueado);
+                    ArrayList<EjercicioRutina> ejercicios = cs.getEjerciciosDelDia(_socioLogueado);
+                    if(cs.hayDiaEntrenamiento(_socioLogueado) && ejercicios.size() > 0){
 
                         System.out.println("Ejercicios del día: ");
                         for(EjercicioRutina ejercicioRutina: ejercicios){
@@ -98,15 +98,11 @@ public class App {
                             diaEjercicio.agregarEjercicio(ejercicioRealizado);
                         }
 
-
                         cs.cargarDiaEjercitacion(_socioLogueado, diaEjercicio);
 
-
                     } else {
-                        System.out.println("Hoy no hay entrenamiento.");
+                        System.out.println("No puedes realizar ejercicios porque: hoy no hay entrenamiento, o ya realizaste tu rutina diaria.");
                     }
-
-
 
                     menu();
                 case "2":

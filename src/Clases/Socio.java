@@ -214,11 +214,13 @@ public class Socio {
         ArrayList<DiaEjercicio> rutinaEjercicios = rutina.getDiaEjercicios();
         for (DiaEjercicio ejercicio : rutinaEjercicios) {
             if (ejercicio.getDia().equals(hoy)) {
-                ejercicio.setRealizado();
-                DiaEjercicio diaActual = new DiaEjercicio(ejercicio.getDia(), rutina.getId());
-                for (EjercicioRutina ejercicioRutina : ejercicio.getEjerciciosRutina()) {
-                    ejercicios.add(ejercicioRutina);
+                if(!ejercicio.realizado()) {
+                    ejercicio.setRealizado();
+                    DiaEjercicio diaActual = new DiaEjercicio(ejercicio.getDia(), rutina.getId());
+                    for (EjercicioRutina ejercicioRutina : ejercicio.getEjerciciosRutina()) {
+                        ejercicios.add(ejercicioRutina);
 
+                    }
                 }
             }
         }

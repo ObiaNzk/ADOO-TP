@@ -6,23 +6,9 @@
       <change beforePath="$PROJECT_DIR$/out/production/App_Ejercicio/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/App_Ejercicio/App.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/App_Ejercicio/Clases/Socio.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/App_Ejercicio/Clases/Socio.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/App_Ejercicio/Controllers/ControllerSocio.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/App_Ejercicio/Controllers/ControllerSocio.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/App_Ejercicio/Trofeos/Trofeo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/App_Ejercicio/Trofeos/Trofeo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/App_Ejercicio/Trofeos/TrofeoConstancia.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/App_Ejercicio/Trofeos/TrofeoConstancia.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/App_Ejercicio/Trofeos/TrofeoCreido.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/App_Ejercicio/Trofeos/TrofeoCreido.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/App_Ejercicio/Trofeos/TrofeoDedicacion.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/App_Ejercicio/Trofeos/TrofeoDedicacion.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Clases/EjercicioRutina.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Clases/EjercicioRutina.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Clases/Medicion/Medicion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Clases/Medicion/Medicion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Clases/Medicion/MedidorExterno.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Clases/Objetivo/ObjetivoMantener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Clases/Objetivo/ObjetivoMantener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Clases/Objetivo/ObjetivoPerderPeso.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Clases/Objetivo/ObjetivoPerderPeso.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Clases/Objetivo/ObjetivoTonificar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Clases/Objetivo/ObjetivoTonificar.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Clases/Socio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Clases/Socio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/ControllerSocio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/ControllerSocio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Trofeos/Trofeo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Trofeos/Trofeo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Trofeos/TrofeoConstancia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Trofeos/TrofeoConstancia.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Trofeos/TrofeoCreido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Trofeos/TrofeoCreido.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Trofeos/TrofeoDedicacion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Trofeos/TrofeoDedicacion.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,8 +36,8 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/Clases/Socio.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/Clases/Objetivo/ObjetivoMantener.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/Clases/Socio.java" root0="SKIP_INSPECTION" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -206,7 +192,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Facu 26/10/2022 9.50am" />
