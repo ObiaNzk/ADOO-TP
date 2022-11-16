@@ -3,13 +3,11 @@ package Clases.Objetivo;
 import Clases.*;
 import Clases.Medicion.Medicion;
 import Clases.Medicion.MedicionAdapter;
-import Clases.Medicion.MedidorExterno;
-import Enums.Sexo;
 import Enums.TipoMuscular;
 import ListaEjercicios.Ejercicio;
+import Trofeos.TrofeoDedicacion;
 
 import java.util.ArrayList;
-import java.util.Random;
 import java.util.Scanner;
 
 public class ObjetivoPerderPeso extends ObjetivoStrategy {
@@ -17,9 +15,11 @@ public class ObjetivoPerderPeso extends ObjetivoStrategy {
     // ejercicios: aerobico mayor igual a 3 y ejercitacion muscular cualquiera
     private final int _duracionMaxima = 90;
 
+    private TrofeoDedicacion _observer = new TrofeoDedicacion();
+
     private int _pesoIdeal;
 
-    private final MedicionAdapter _balanza = new Medicion(new MedidorExterno());
+    private final MedicionAdapter _balanza = new Medicion();
 
     private final Socio _socio;
 
@@ -103,23 +103,11 @@ public class ObjetivoPerderPeso extends ObjetivoStrategy {
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("Felicidades, cumpliste tu objetivo de perder peso :).");
+        _observer.chequearPremio(_socio);
 
-        while (true) {
-            System.out.println("Si queres cambiar tu objetivo a 'Mantener Figura' escribi 'SI', caso contrario escribi 'NO'.");
-            String cambiarObjetivo = scanner.nextLine();
+        System.out.println("Si queres cambiar tu objetivo a 'Tonificar' elegí la opción 2, y luego la opción 2.");
 
-            switch (cambiarObjetivo) {
-                case "SI":
-                    System.out.println("Cambiando objetivo a 'Mantener Figura.");
-                    this._socio.getObjetivo().cambiarEstrategia(new ObjetivoMantener(_socio));
-                    return true;
-                case "NO":
-                    System.out.println("Tu objetivo no fue modificado.");
-                    return true;
-                default:
-                    System.out.println("Opción invalida, intente nuevamente");
-            }
-        }
+        return true;
 
     }
 }

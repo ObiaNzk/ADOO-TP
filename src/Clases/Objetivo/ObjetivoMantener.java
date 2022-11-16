@@ -7,6 +7,7 @@ import Clases.Socio;
 import Enums.Exigencia;
 import Enums.TipoMuscular;
 import ListaEjercicios.Ejercicio;
+import Trofeos.TrofeoDedicacion;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -19,6 +20,8 @@ public class ObjetivoMantener extends ObjetivoStrategy {
 
     private final int _duracionMinima = 45;
     private final int _duracionMaxima = 80;
+
+    private TrofeoDedicacion _observer = new TrofeoDedicacion();
 
     private final Socio _socio;
 
@@ -114,6 +117,7 @@ public class ObjetivoMantener extends ObjetivoStrategy {
             return false;
         } else {
             System.out.println("Felicidades, cumpliste tu objetivo de Mantener tu peso :).");
+            _observer.chequearPremio(_socio);
             return true;
         }
 

@@ -17,7 +17,7 @@ public class TrofeoConstancia extends Trofeo {
         this.setNombre("Trofeo a la Constancia");
     }
 
-    public static void chequearPremio(Socio socio) {
+    public void chequearPremio(Socio socio) {
         var rutina = socio.getRutina();
         var historial = socio.getHistorialEjercicios();
 

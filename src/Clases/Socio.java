@@ -17,7 +17,6 @@ import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Scanner;
-import java.util.concurrent.ThreadLocalRandom;
 
 public class Socio {
     private final int _dni;
@@ -30,6 +29,8 @@ public class Socio {
     private String[] _diasEntrenamiento;
     private Objetivo _objetivo;
     private ArrayList<Trofeo> _trofeos = new ArrayList<Trofeo>();
+    private Trofeo _observerCreido = new TrofeoCreido();
+    private Trofeo _observerConstancia = new TrofeoConstancia();
     private ArrayList<DiaEjercicio> _historialEjercicios = new ArrayList<>();
 
     private ArrayList<MedicionHistorial> _historialMedicion = new ArrayList<MedicionHistorial>();
@@ -47,11 +48,12 @@ public class Socio {
 
         setMedicionInicial();
 
+
     }
 
     private void setMedicionInicial() {
         _medicion = new MedicionResultado();
-        _medicion.setPeso(80);
+        _medicion.setPeso(85);
         _medicion.setGrasaCorporal(8);
         _medicion.setMasaMuscular(20);
     }
@@ -90,8 +92,16 @@ public class Socio {
         _historialMedicion.add(nuevaMedicion);
         _medicion = resultado;
         mostrarMedicion(nuevaMedicion);
-        TrofeoCreido.chequearPremio(this);
-        TrofeoDedicacion.chequearPremio(this);
+        _observerCreido.chequearPremio(this);
+        cumplioObjetivo();
+    }
+
+    public boolean cumplioObjetivo() {
+        if (_objetivo.getEstrategia() == null){
+            return false;
+        }
+
+        return _objetivo.getEstrategia().cumplioObjetivo();
     }
 
     public MedicionResultado getMedicion() {
@@ -128,31 +138,12 @@ public class Socio {
         this._diasEntrenamiento = dias;
     }
 
-    public void elegirObjetivo() {
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.println("Elija un objetivo. Ingrese el número de la opción que corresponda.\n" +
-                "\n" +
-                "1. Bajar de peso\n" +
-                "\n" +
-                "2. Tonificar cuerpo\n" +
-                "\n" +
-                "3. Mantener la figura");
-        String elegido = scanner.nextLine();
-        while (!elegido.equals("1") && !elegido.equals("2") && !elegido.equals("3")) {
-            System.out.println("Ingrese un número de objetivo válido.");
-            elegido = scanner.nextLine();
-        }
-
+    public void elegirObjetivo(String elegido) {
         this.cambiarObjetivo(elegido);
         this.getObjetivo().crearRutina(this._diasEntrenamiento);
     }
 
-    public void elegirDiasEntrenamiento() {
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.println("Elija qué días desea seleccionar como días de entrenamiento, separados por coma y sin espacios.\n LU, MA, MI, JU, VI, SA, DO. ");
-        String dias = scanner.nextLine();
+    public void elegirDiasEntrenamiento(String dias) {
 
         this.setDiasEntrenamiento(dias.split(","));
 
@@ -206,7 +197,6 @@ public class Socio {
     // MOVER hayDiaEntrenamiento() A CLASE DE UTILS
 
     public boolean hayDiaEntrenamiento() {
-        // this.getObjetivo().mostrarRutina(dayOfWeek);
         String hoy = getDiaHoy();
         boolean diaEntrenamiento = false;
         for (String dia : this._diasEntrenamiento) {
@@ -216,55 +206,23 @@ public class Socio {
         }
         return diaEntrenamiento;
     }
-    public void entrenar() {
-        String hoy = getDiaHoy();
-        boolean diaEntrenamiento = hayDiaEntrenamiento();
-        Rutina rutina = _objetivo.getRutina();
-        if (diaEntrenamiento) {
-            ArrayList<DiaEjercicio> diaEjercicios = rutina.getDiaEjercicios();
-            for (DiaEjercicio diaEjercicio : diaEjercicios) {
-                if (diaEjercicio.getDia().equals(hoy) && diaEjercicio.realizado() == false) {
-                    System.out.println("Ejercicios del día:");
-                    for (EjercicioRutina ejercicioRutina : diaEjercicio.getEjerciciosRutina()) {
-                        System.out.println("* " + ejercicioRutina.getNombre());
-                    }
-                    cargarEjercicios();
-                    diaEjercicio.setRealizado();
-                } else{
-                    if(diaEjercicio.getDia().equals(hoy)) {
-                        System.out.println("Ejercicios del dia realizados.");
-                    }
-                }
-            }
-        } else {
-            System.out.println("Tu rutina no tiene ejercicios para hoy.");
-        }
-    }
 
-    public void cargarEjercicios() {
+    public ArrayList<EjercicioRutina> getEjerciciosDelDia() {
+        ArrayList<EjercicioRutina> ejercicios = new ArrayList<>();
         String hoy = getDiaHoy();
         Rutina rutina = _objetivo.getRutina();
         ArrayList<DiaEjercicio> rutinaEjercicios = rutina.getDiaEjercicios();
-        Scanner scanner = new Scanner(System.in);
         for (DiaEjercicio ejercicio : rutinaEjercicios) {
             if (ejercicio.getDia().equals(hoy)) {
+                ejercicio.setRealizado();
                 DiaEjercicio diaActual = new DiaEjercicio(ejercicio.getDia(), rutina.getId());
                 for (EjercicioRutina ejercicioRutina : ejercicio.getEjerciciosRutina()) {
-                    ejercicioRutina.instrucciones();
-                    System.out.println("Cantidad de series realizadas:");
-                    String series = scanner.nextLine();
-                    System.out.println("Cantidad de repeticiones realizadas:");
-                    String repeticiones = scanner.nextLine();
-                    System.out.println("Peso levantado:");
-                    String peso = scanner.nextLine();
-                    EjercicioRutina ejercicioActual = new EjercicioRutina(ejercicioRutina.getEjercicio(),
-                            Integer.parseInt(series), Integer.parseInt(repeticiones), Integer.parseInt(peso));
-                    diaActual.agregarEjercicio(ejercicioActual);
+                    ejercicios.add(ejercicioRutina);
+
                 }
-                _historialEjercicios.add(diaActual);
             }
         }
-        TrofeoConstancia.chequearPremio(this);
+        return ejercicios;
     }
 
     public void mostrarMedicion(MedicionHistorial medicion) {
@@ -323,13 +281,7 @@ public class Socio {
         System.out.println();
     }
 
-    public boolean cumplioObjetivo() {
-        if (this.getObjetivo().getEstrategia() == null){
-            return false;
-        }
 
-        return this.getObjetivo().getEstrategia().cumplioObjetivo();
-    }
 
     public void reforzarRutina() {
         this.getObjetivo().reforzarRutina();
@@ -353,5 +305,14 @@ public class Socio {
 
         this._trofeos.add(trofeo);
         return true;
+    }
+
+    public void agregarDiaDeEntrenamiento(DiaEjercicio diaEjercicio) {
+        _historialEjercicios.add(diaEjercicio);
+        _observerConstancia.chequearPremio(this);
+    }
+
+    public int getIdRutina() {
+        return _objetivo.getRutina().getId();
     }
 }

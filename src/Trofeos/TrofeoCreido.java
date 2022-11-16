@@ -21,7 +21,7 @@ public class TrofeoCreido extends Trofeo {
     }
 
 
-    public static void chequearPremio(Socio socio) {
+    public void chequearPremio(Socio socio) {
         var historialMediciones = socio.getHistorialMedicion();
         var contadorMediciones = 0;
         var mesActual = Calendar.getInstance().get(Calendar.MONTH);

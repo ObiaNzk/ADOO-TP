@@ -7,13 +7,12 @@ import Clases.Socio;
 import Clases.Medicion.Medicion;
 import Clases.Medicion.MedicionAdapter;
 import Clases.Medicion.MedicionResultado;
-import Clases.Medicion.MedidorExterno;
 import Enums.Exigencia;
 import Enums.TipoMuscular;
 import ListaEjercicios.Ejercicio;
+import Trofeos.TrofeoDedicacion;
 
 import java.util.ArrayList;
-import java.util.Random;
 import java.util.Scanner;
 
 public class ObjetivoTonificar extends ObjetivoStrategy {
@@ -22,11 +21,13 @@ public class ObjetivoTonificar extends ObjetivoStrategy {
     // ejercicios: aerobico entre <= 4 y ejercitacion muscular fuerte
     private final int _duracionMaxima = 150;
 
+    private TrofeoDedicacion _observer = new TrofeoDedicacion();
+
     private final Socio _socio;
 
     private final MedicionResultado _medicionIdeal;
 
-    private final MedicionAdapter _medidor = new Medicion(new MedidorExterno());
+    private final MedicionAdapter _medidor = new Medicion();
 
     public ObjetivoTonificar(Socio socio) {
         this._socio = socio;
@@ -109,23 +110,11 @@ public class ObjetivoTonificar extends ObjetivoStrategy {
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("Felicidades, cumpliste tu objetivo de Tonificar :).");
+        _observer.chequearPremio(_socio);
 
-        while (true) {
-            System.out.println("Si queres cambiar tu objetivo a 'Mantener Figura' escribi 'SI', caso contrario escribi 'NO'.");
-            String cambiarObjetivo = scanner.nextLine();
+        System.out.println("Si queres cambiar tu objetivo a 'Mantener Figura' elegí la opción 2, y luego la opción 3.");
 
-            switch (cambiarObjetivo) {
-                case "SI":
-                    System.out.println("Cambiando objetivo a 'Mantener Figura.");
-                    this._socio.getObjetivo().cambiarEstrategia(new ObjetivoMantener(this._socio));
-                    return true;
-                case "NO":
-                    System.out.println("Tu objetivo no fue modificado.");
-                    return true;
-                default:
-                    System.out.println("Opción invalida, intente nuevamente");
-            }
-        }
+        return true;
 
     }
 

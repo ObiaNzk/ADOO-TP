@@ -18,6 +18,7 @@ public class EjercicioRutina {
         this._pesoAsignado = pesoAsignado;
     }
 
+
     public Ejercicio getEjercicio() {
         return this._ejercicio;
     }

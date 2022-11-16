@@ -13,13 +13,11 @@ public class TrofeoDedicacion extends Trofeo {
         this.setNombre("Trofeo a la Dedicación");
     }
 
-    public static void chequearPremio(Socio socio) {
-        if (socio.cumplioObjetivo()) {
-            var trofeo = new TrofeoDedicacion();
-            var recibio = socio.recibirTrofeo(trofeo);
-            if (recibio){
-                new Notificador().enviar(MessageFormat.format("¡Felicitaciones!\nGanaste el {0}.", trofeo.getNombre()));
-            }
+    public void chequearPremio(Socio socio) {
+        var trofeo = new TrofeoDedicacion();
+        var recibio = socio.recibirTrofeo(trofeo);
+        if (recibio) {
+            new Notificador().enviar(MessageFormat.format("¡Felicitaciones!\nGanaste el {0}.", trofeo.getNombre()));
         }
     }
 }

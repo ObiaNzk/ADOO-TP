@@ -14,5 +14,6 @@ public abstract class Trofeo {
         return _nombre;
     }
 
-
+    public void chequearPremio(Socio socio) {
+    }
 }
